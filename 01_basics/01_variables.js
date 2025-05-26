@@ -26,7 +26,8 @@
      
 
 // Qu. What is the difference between var, let, and const?
-// Ans. 
+// Ans.  var is Fuction scoped, let and const is block scoped 
+//       var is reassign and redeclared both, let is reassign and not redeclared, const is not reassign and not redeclared.
 
 // What is variable hoisting in JavaScript?
 
