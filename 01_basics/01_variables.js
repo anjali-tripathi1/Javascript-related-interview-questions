@@ -27,9 +27,18 @@
 
 // Qu. What is the difference between var, let, and const?
 // Ans.  var is Fuction scoped, let and const is block scoped 
-//       var is reassign and redeclared both, let is reassign and not redeclared, const is not reassign and not redeclared.
+//       var is reassign and redeclared both, let is reassign but not redeclared, const is not reassign and not redeclared.
 
-// What is variable hoisting in JavaScript?
+
+
+// Qu. What is variable hoisting in JavaScript?
+// Ans. Variable hoisting in JavaScript is a behavior where variable and function declarations are moved (or "hoisted") to the top of their containing scope (either the function scope or the global scope) during the compilation phase, before the code is executed.
+// However, only the declarations are hoisted, not the initializations.
+
+// var Example
+var a;
+console.log(a);
+
 
 // What is the scope of a variable in JavaScript?
 
