@@ -36,32 +36,142 @@
 // However, only the declarations are hoisted, not the initializations.
 
 // var Example
-var a;
-console.log(a);
+var a;             // Declaration is hoisted
+console.log(a);    // undefined
+var a = 5;         // Intialization remains place
+console.log(a);    // 5
 
 
-// What is the scope of a variable in JavaScript?
 
+// Qu. What is the scope of a variable in JavaScript?
 // (Block scope vs. Function scope vs. Global scope)
+// Ans. In JavaScript, the scope of a variable refers to the context in which the variable is defined and determines where the variable can be accessed or used in your code.
+// There are three main types of variable scope in JavaScript:
 
-// Can you reassign a value to a const variable?
+// 1. Global Scope
+// A variable has global scope if it's declared outside of any function or block.
+// It can be accessed and modified anywhere in the program.
 
-// What happens if you declare a variable without var, let, or const?
 
-// What is the default value of an uninitialized variable?
+let globalVar = "I'm global";
+
+function test() {
+  console.log(globalVar); // Accessible
+}
+
+// 2. Function Scope
+// Variables declared using var inside a function are function-scoped.
+// They are accessible only within that function.
+
+function test() {
+  var functionVar = "I'm local";
+  console.log(functionVar);
+}
+console.log(functionVar);  // functionVar is not defined
+
+// 3. Block Scope
+// Variables declared with let and const are block-scoped.
+// They are accessible only within the block {} where they are defined.
+
+if (true) {
+  let blockVar = "I'm block scoped";
+  const anotherBlockVar = "Me too";
+}
+console.log(blockVar); //  blockVar is not defined
+
+
+// Bonus: Lexical Scope
+// JavaScript also uses lexical scoping, meaning:
+// A function can access variables from its parent scopes.
+
+function outer() {
+  let outerVar = "I'm from outer";
+  function inner() {
+    console.log(outerVar); //  Accessible due to lexical scope
+  }
+  inner();
+}
+outer();
+
+
+
+// Qu. Can you reassign a value to a const variable?
+// Ans. no it can't change We cannot reassign the variable to a different value.
+
+ const accountId = 212121
+ console.log(accountId);
+//  const accountId = 12345 (not allowed)
+
+// Qu. What happens if you declare a variable without var, let, or const?
+// Ans. In JavaScript, if we declare a variable without using var, let, or const,the variable becomes implicitly global.
+
+
+// Qu. What is the default value of an uninitialized variable?
+// Ans. The default value of an uninitialized variable depends on the programming language and the context (e.g., global vs. local scope).
+// JavaScript
+// Uninitialized declared variables (with var, let, or const) are:
+// undefined if declared but not assigned.
+// ReferenceError if accessed before declaration in the case of let and const.
+var x;
+console.log(x); // undefined
+
 
 //  Intermediate Level Questions
-// What is temporal dead zone (TDZ)?
+// Qu. What is temporal dead zone (TDZ)?
+// Ans. The Temporal Dead Zone (TDZ) is a behavior in JavaScript that occurs when trying to access a variable declared with let, const, or class before its declaration in the code is evaluated.
 
-// How do let and const handle block scoping differently than var?
 
-// What is the difference between undefined and null?
+// Qu. How do let and const handle block scoping differently than var?
 
-// Can you declare the same variable multiple times using var, let, and const?
+// Qu. What is the difference between undefined and null?
+// Ans. undefined is a type in itself. It means variable is declared but value is not assigned.
+      //  null is a object type . It's a standlone value and this retpresents empty value.
+  
+      let accountState;
+      console.log(typeof accountState);  // undefined
 
-// What is the difference between global variables and local variables?
+      let salary = null;
+      console.log(typeof salary); // object
+      
+      
 
-// What are shadowed variables?
+// Qu. Can you declare the same variable multiple times using var, let, and const?
+// Ans. var can be redeclared and reassigned without any error, let can't be redeclared but it can be reassigned and const can't redeclared and reassigned.
+
+var b = "Anjali";
+var b = "Saroj"
+console.log(b);
+
+let y = 25
+// let y = 30  not allowed 
+y = 30
+console.log(y);
+
+const accountEmail = "abc@.com";
+console.log(accountEmail);
+
+// const accountEmail = "xyz@.com"  not allowed
+
+
+  
+
+// Qu. What is the difference between global variables and local variables?
+// Ans. The difference between global variables and local variables lies in their scope—that is, where in a program they can be accessed or modified.
+// Global Variables
+// Defined outside of all functions or blocks.
+// Accessible from anywhere in the program, including inside functions (unless shadowed by a local variable with the same name).
+// Persist throughout the program's execution.
+
+// Local Variables
+// Defined inside a function or block.
+// Accessible only within that function or block.
+// Created when the function is called and destroyed when the function ends.
+
+
+
+
+// Qu.What are shadowed variables?
+// Ans. 
 
 // How does JavaScript handle variable declaration inside loops?
 
