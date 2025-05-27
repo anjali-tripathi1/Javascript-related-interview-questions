@@ -1,5 +1,6 @@
  
- // variables
+ // variables=> In JavaScript, variables are used to store data values or They are used for creating  space in 
+//          memory for store data value. and for using variables in Javascript we declare variables.
 
 
 //   Basic Level Questions
@@ -76,11 +77,12 @@ console.log(functionVar);  // functionVar is not defined
 if (true) {
   let blockVar = "I'm block scoped";
   const anotherBlockVar = "Me too";
-}
-console.log(blockVar); //  blockVar is not defined
+ }
+
+  console.log(blockVar);  //  blockVar is not defined
 
 
-// Bonus: Lexical Scope
+// Bonus: Lexical Scope (Static scope)
 // JavaScript also uses lexical scoping, meaning:
 // A function can access variables from its parent scopes.
 
@@ -96,7 +98,7 @@ outer();
 
 
 // Qu. Can you reassign a value to a const variable?
-// Ans. no it can't change We cannot reassign the variable to a different value.
+// Ans. no it can't change We cannot reassign the const variable to a different value.
 
  const accountId = 212121
  console.log(accountId);
@@ -173,9 +175,12 @@ console.log(accountEmail);
 // Qu.What are shadowed variables?
 // Ans. 
 
-// How does JavaScript handle variable declaration inside loops?
+// Qu.How does JavaScript handle variable declaration inside loops?
+// Ans.
 
-// How do closures relate to variable scope?
+// Qu. How do closures relate to variable scope?
+// Ans. 
+
 
 //  Advanced Level Questions
 // How do closures work with var, let, and const in loops?
