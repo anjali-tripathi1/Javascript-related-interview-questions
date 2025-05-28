@@ -4,6 +4,7 @@
 
 
 //   Basic Level Questions
+
 //  Qu.What are the different ways to declare variables in JavaScript?
 //  Ans. There are three ways to declare a variable
  //  1 . var - Introduced in ES5 or Earlier, can be re-declared and updated.
@@ -119,6 +120,7 @@ console.log(x); // undefined
 
 
 //  Intermediate Level Questions
+
 // Qu. What is temporal dead zone (TDZ)?
 // Ans. The Temporal Dead Zone (TDZ) is a behavior in JavaScript that occurs when trying to access a variable declared with let, const, or class before its declaration in the code is evaluated.
 
@@ -164,27 +166,84 @@ console.log(accountEmail);
 // Accessible from anywhere in the program, including inside functions (unless shadowed by a local variable with the same name).
 // Persist throughout the program's execution.
 
+var globelVar = "I'm global";
+
+function printGlobal() {
+  console.log(globelVar); // Accessible here
+}
+
+printGlobal();
+console.log(globelVar); // Also accessible here
+
 // Local Variables
 // Defined inside a function or block.
 // Accessible only within that function or block.
 // Created when the function is called and destroyed when the function ends.
 
+function myFunction() {
+  let localVar = "I'm local";
+  console.log(localVar); // Accessible here
+}
 
+myFunction();
+console.log(localVar); //   localVar is not defined
 
 
 // Qu.What are shadowed variables?
-// Ans. 
+// Ans. Shadowed variables occur in programming when a variable declared within a certain scope (e.g., inside a function or block) has the same name as a variable declared in an outer scope. The inner (more local) variable "shadows" or hides the outer variable, making the outer one inaccessible in that scope.
 
-// Qu.How does JavaScript handle variable declaration inside loops?
-// Ans.
+let x = 10;
+
+function demo() {
+    let x = 5;  // This 'x' shadows the outer 'x'
+    console.log(x); // Output: 5
+}
+
+demo();
+console.log(x); // Output: 10
+
+
+
+// Qu. How does JavaScript handle variable declaration inside loops?
+// Ans. avaScript handles variable declaration inside loops in different ways depending on whether you use var, let, or const.
+
+// 1. Using var
+// var has function scope, not block scope.
+// If you declare a variable with var inside a loop, it's accessible outside the loop block (within the same function).
+// All iterations of the loop share the same variable binding.
+for (var i = 0; i < 3; i++) {
+  setTimeout(() => console.log(i), 100);
+}
+// Output: 3 3 3
+
+// 2. Using let
+// let has block scope.
+// When used inside a loop, each iteration has a new, unique binding of the variable.
+// This makes let much more reliable for closures in loops.
+for (let i = 0; i < 3; i++) {
+  setTimeout(() => console.log(i), 100);
+}
+// Output: 0 1 2
+
+// 3. Using const
+// const also has block scope, like let.
+// But it must be initialized immediately and cannot be reassigned.
+// Useful in loops like for...of or forEach where you don't need to change the loop variable.
+const arr = [10, 20, 30];
+for (const value of arr) {
+  console.log(value);
+}
+// Output: 10 20 30
+
 
 // Qu. How do closures relate to variable scope?
 // Ans. 
 
 
 //  Advanced Level Questions
-// How do closures work with var, let, and const in loops?
 
+// Qu. How do closures work with var, let, and const in loops?
+// Ans. 
 // What are immediately-invoked function expressions (IIFE), and how do they affect variable scope?
 
 // How does JavaScript manage memory for variables (garbage collection basics)?
