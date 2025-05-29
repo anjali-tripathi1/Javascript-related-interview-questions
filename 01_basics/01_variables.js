@@ -235,9 +235,57 @@ for (const value of arr) {
 }
 // Output: 10 20 30
 
+// Trying to use const like this:
+for (const i = 0; i < 3; i++) {
+  console.log(i);
+}
+// Throws an error – because i cannot be reassigned.
+
+
 
 // Qu. How do closures relate to variable scope?
-// Ans. 
+// Ans. Closures in JavaScript are a fundamental concept that directly relate to variable scope, particularly lexical (static) scope.
+// What is a Closure?
+// A closure is a function that "remembers" the variables from its lexical scope even when the function is executed outside that scope.
+// In other words:
+// A closure allows a function to access variables from an outer scope even after that outer function has finished executing.
+// How It Relates to Variable Scope
+// JavaScript uses lexical scoping, which means that the scope of a variable is determined by its position in the source code.
+// When a function is defined inside another function, it forms a closure and captures the variables from the outer function’s scope.
+
+function outerFunction() {
+    let outerVariable = 'I am from the outer scope';
+
+    function innerFunction() {
+        console.log(outerVariable); // accesses variable from outer scope
+    }
+
+    return innerFunction;
+}
+
+const closureFunc = outerFunction(); // outerFunction runs, but doesn't delete its scope
+closureFunc(); // logs: "I am from the outer scope"
+
+// Here’s what’s happening:
+// innerFunction is defined within outerFunction, so it has access to outerVariable.
+// Even though outerFunction has finished executing, the returned innerFunction retains access to outerVariable. This is a closure.
+
+// Consider this loop with var:
+
+for (var i = 0; i < 3; i++) {
+    setTimeout(function() {
+        console.log(i); // prints 3 three times
+    }, 100);
+}
+
+// using let
+
+for (let i = 0; i < 3; i++) {
+    setTimeout(function() {
+        console.log(i); // prints 0, 1, 2
+    }, 100);
+}
+
 
 
 //  Advanced Level Questions
