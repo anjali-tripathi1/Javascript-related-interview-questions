@@ -291,8 +291,23 @@ for (let i = 0; i < 3; i++) {
 //  Advanced Level Questions
 
 // Qu. How do closures work with var, let, and const in loops?
+// Ans. Closures in JavaScript can behave differently depending on whether you use var, let, or const in loops. This difference is especially noticeable in constructs like for loops.
+// var in Loops and Closures
+// var has function scope and does not create a new binding per iteration of the loop. This causes closures inside the loop to capture the same variable — which changes as the loop continues.
+
+for (var i = 0; i < 3; i++) {
+  setTimeout(() => console.log(i), 100);
+}
+
+// let and const in Loops and Closures
+// Both let and const have block scope, and in for loops, JavaScript creates a new binding for each iteration. This means each closure captures a separate instance of the loop variable.
+for (let i = 0; i < 3; i++) {
+  setTimeout(() => console.log(i), 100);
+}
+
+
+// Qu. What are immediately-invoked function expressions (IIFE), and how do they affect variable scope?
 // Ans. 
-// What are immediately-invoked function expressions (IIFE), and how do they affect variable scope?
 
 // How does JavaScript manage memory for variables (garbage collection basics)?
 
