@@ -398,7 +398,41 @@ person = null; // The object is now unreachable (unless referenced elsewhere)
 
 
 // Qu. What are the implications of using global variables in JavaScript?
-// Ans.
+// Ans. Using global variables in JavaScript can have several important implications, both technically and in terms of code maintainability.
+// Negative Implications
+
+// 1. Namespace Pollution
+// All global variables are added to the global object (window in browsers, global in Node.js).
+// If multiple scripts define global variables with the same name, they can overwrite each other, causing unexpected behavior.
+
+// 2. Tight Coupling
+// Code becomes tightly coupled to specific variables in the global scope, making it harder to isolate or reuse components.
+// Any change to a global variable might inadvertently affect unrelated parts of the application.
+
+// 3. Testing Difficulty
+// Global variables make unit testing harder because test cases may rely on or affect shared state.
+// Resetting the environment between tests can be cumbersome.
+
+// 4. Security Risks
+// Global variables can be manipulated by other scripts, including third-party libraries or malicious code.
+// This can lead to data leakage or unintended side effects.
+
+// 5. Debugging Complexity
+// It's harder to track bugs when state is shared across many places in your application.
+// Errors caused by a global variable change may appear far from the actual source.
+
+//  When Global Variables Might Be Acceptable
+// Constants or configuration values that never change (e.g., const API_BASE_URL = "...") and are used throughout the app.
+// Polyfills or environment-specific helpers that must be globally accessible.
+// In small scripts or educational examples where modularity isn't a priority.
+
+//  Best Practices / Alternatives
+
+// Use let, const, or var inside functions or modules to avoid polluting the global scope.
+// Use IIFEs (Immediately Invoked Function Expressions) or ES6 modules to create local scopes.
+// Use namespaces or single global objects to contain all global data if some shared state is necessary (e.g., window.MyApp = {}).
+// In modern codebases, rely on module bundlers (Webpack, Vite) or frameworks that promote modular design.
+
 
 
 // Qu. What is variable leakage and how can it be avoided?
