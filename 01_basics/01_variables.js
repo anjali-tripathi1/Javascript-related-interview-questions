@@ -356,7 +356,46 @@ console.log("Outside IIFE:", count); // 10
 
 
 // Qu. How does JavaScript manage memory for variables (garbage collection basics)?
-// Ans. 
+// Ans. JavaScript manages memory automatically through a process called garbage collection. Here's a basic breakdown of how it works:
+
+//  Memory Management Basics in JavaScript
+// JavaScript programs use memory in two primary phases:
+// Allocation: When variables, objects, or functions are created.
+// Deallocation (Garbage Collection): When those items are no longer needed and the memory can be reclaimed.
+
+// Garbage Collection
+// JavaScript engines (like V8 in Chrome and Node.js) use automatic garbage collection to free up memory that's no longer in use.
+// The most common garbage collection strategy is:
+
+// Mark-and-Sweep Algorithm
+// This is the core of modern garbage collectors in JavaScript.
+// How it works:
+
+// Mark Phase:
+// The GC starts with a set of "roots" (e.g., global variables, the call stack).
+// It traverses all reachable (accessible) objects from those roots and marks them as "in use."
+
+// Sweep Phase:
+// Anything not marked is considered unreachable.
+// These unreachable values are then removed from memory.
+
+//  When is memory considered unreachable?
+// Memory is unreachable when there are no references to it from any reachable code.
+// Example:
+let person = {
+  name: "Alice"
+};
+
+person = null; // The object is now unreachable (unless referenced elsewhere)
+// Once person is set to null, the original object is no longer referenced and is eligible for garbage collection.
+
+//  Tips to Avoid Memory Leaks
+// Break circular references in closures or DOM elements.
+// Clean up timers, event listeners, or observers when not needed.
+// Use tools like Chrome DevTools to monitor memory usage and identify leaks.
+
+
+
 
 // Qu. What are the implications of using global variables in JavaScript?
 // Ans.
