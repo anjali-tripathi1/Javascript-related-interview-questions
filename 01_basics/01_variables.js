@@ -307,19 +307,72 @@ for (let i = 0; i < 3; i++) {
 
 
 // Qu. What are immediately-invoked function expressions (IIFE), and how do they affect variable scope?
+// Ans. An Immediately-Invoked Function Expression (IIFE) is a JavaScript function that is defined and immediately executed after its creation.
+(function() {
+    // code here runs immediately
+})();
+
+// Or using arrow functions:
+(() => {
+    // code here runs immediately
+})();
+
+// Purpose of an IIFE
+// 1. Create a new scope to avoid polluting the global namespace.
+// 2. Encapsulate variables and logic so that they don’t interfere with other code.
+
+(function() {
+    var message = "Hello from IIFE";
+    console.log(message);
+})();
+
+console.log(typeof message); // "undefined"
+// Inside the IIFE, message is defined and logged.
+// Outside, message is not accessible—it’s scoped to the IIFE only.
+
+// How IIFEs Affect Variable Scope
+
+// JavaScript has function-level (pre-ES6) and block-level (with let and const) scoping.
+// IIFEs create a new function scope, which means:
+// Variables declared inside an IIFE do not leak into the surrounding code.
+// This is especially useful when:
+// Avoiding conflicts with other scripts.
+// Protecting variables from accidental access or modification.
+
+// Example – Avoiding Scope Pollution
+
+var count = 10;
+
+(function() {
+    var count = 0;
+    console.log("Inside IIFE:", count); // 0
+})();
+
+console.log("Outside IIFE:", count); // 10
+//  the inner count variable is isolated from the outer count variable.
+
+
+
+
+
+// Qu. How does JavaScript manage memory for variables (garbage collection basics)?
 // Ans. 
 
-// How does JavaScript manage memory for variables (garbage collection basics)?
+// Qu. What are the implications of using global variables in JavaScript?
+// Ans.
 
-// What are the implications of using global variables in JavaScript?
 
-// What is variable leakage and how can it be avoided?
+// Qu. What is variable leakage and how can it be avoided?
+// Ans.
 
-// What are some best practices for naming and organizing variables in large-scale JavaScript applications?
+// Qu. What are some best practices for naming and organizing variables in large-scale JavaScript applications?
+// Ans.
 
-// How do JavaScript modules handle variable scoping?
+// Qu. How do JavaScript modules handle variable scoping?
+// Ans.
 
-// Can you modify the contents of a const object or array?
+// Qu. Can you modify the contents of a const object or array?
+// Ans.
 
-// What happens if you access a variable before it's declared with let or const?
-
+// Qu. What happens if you access a variable before it's declared with let or const?
+// Ans.
