@@ -436,7 +436,57 @@ person = null; // The object is now unreachable (unless referenced elsewhere)
 
 
 // Qu. What is variable leakage and how can it be avoided?
-// Ans.
+// Ans. Variable leakage in JavaScript refers to the unintended creation of global variables, usually due to improper variable declaration. This can lead to bugs, collisions, and unexpected behavior, especially in larger codebases or when integrating third-party scripts.
+
+// How Variable Leakage Happens
+// 1. Missing var, let, or const
+// When a variable is assigned a value without being declared, JavaScript implicitly creates it in the global scope.
+function testLeak() {
+  leakedVar = "Oops!";  // No declaration keyword
+}
+testLeak();
+
+console.log(leakedVar);  // "Oops!" — now a global variable!
+
+// 2. Accidental Reuse of Globals
+// You may unintentionally overwrite or access a global variable due to name conflicts.
+var data = "global";
+
+function test() {
+  data = "modified";  // modifies the global variable!
+}
+
+// How to Avoid Variable Leakage
+// 1. Always Use let, const, or var
+
+function safeFunction() {
+  let localVar = "Safe";
+}
+// let and const are block-scoped (preferred in modern JS)
+// var is function-scoped (older, avoid if possible)
+
+// 2. Use 'use strict'; Mode
+// Enabling strict mode will throw an error when assigning to undeclared variables.
+'use strict';
+
+function strictFunction() {
+  undeclared = 42;  // ReferenceError: undeclared is not defined
+}
+
+// 3. Use IIFEs (Immediately Invoked Function Expressions) for Scope Isolation
+(function() {
+  let scoped = "I'm safe here";
+})();
+
+// 4. Modularize Code
+// Use ES6 modules or module bundlers to isolate scope.
+// module.js
+export function doSomething() {
+  const localOnly = "kept private";
+}
+
+// 5. Lint Your Code
+// Use tools like ESLint to catch variable leaks and enforce consistent style.
 
 // Qu. What are some best practices for naming and organizing variables in large-scale JavaScript applications?
 // Ans.
