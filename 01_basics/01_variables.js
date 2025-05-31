@@ -633,7 +633,33 @@ console.log(this); // undefined in a module
 
 
 // Qu. Can you modify the contents of a const object or array?
-// Ans.
+// Ans. In JavaScript (and similar languages like TypeScript):
+// Yes, you can modify the contents of a const object or array.
+// Declaring a variable with const means you cannot reassign the variable, but you can still change the contents of the object or array it refers to.
+
+// Example with an Array:
+const numbers = [1, 2, 3];
+
+//  This is allowed — modifying the contents
+numbers.push(4);
+numbers[0] = 10;
+
+console.log(numbers); // [10, 2, 3, 4]
+
+//  This is NOT allowed — reassigning the variable
+numbers = [5, 6, 7]; // TypeError
+
+// Example with an Object:
+const personal = { name: "Alice", age: 25 };
+
+//  This is allowed
+person.age = 26;
+person.city = "New York";
+
+console.log(personal); // { name: "Alice", age: 26, city: "New York" }
+
+//  This is NOT allowed
+person = { name: "Bob" }; // TypeError
 
 // Qu. What happens if you access a variable before it's declared with let or const?
 // Ans.
