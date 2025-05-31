@@ -674,3 +674,4 @@ var z = 10;
 // With var, the variable is hoisted and initialized with undefined, so no error occurs (though the value isn't useful yet).
 
 
+
