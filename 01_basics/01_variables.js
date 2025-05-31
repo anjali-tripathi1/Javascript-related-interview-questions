@@ -523,6 +523,67 @@ const user = {
 // Good: user, config, date
 // Avoid non-standard acronyms unless they are widely known (e.g., URL, HTML).
 
+// 4. Prefix Booleans Clearly
+// Use prefixes like is, has, can: isActive, hasPermission, canEdit
+
+// 5. Contextual Naming
+// Let the scope define context to avoid overly verbose names.
+// Instead of userListInComponent, just userList if already inside UserComponent.js
+
+// 6. Avoid Reserved Words and Globals
+// Avoid overwriting built-ins like event, name, value, data
+
+// Organizational Best Practices
+
+// 1. Modular Structure
+// Break code into logical modules/files: auth.js, userService.js, ProductList.jsx
+// Each module should ideally have a single responsibility.
+
+// 2. Group Related Variables
+// Use objects or classes to encapsulate related data:
+const userName = {
+  name: 'Alice',
+  email: 'alice@example.com',
+  isLoggedIn: true
+};
+
+// 3. Avoid Global Variables
+// Use module scope and closures to encapsulate state.
+// Leverage ES6 modules (import/export) to control exposure.
+
+// 4. Use Constants for Magic Values
+// Define constants for strings, numbers, and configuration values:
+const STATUS_ACTIVE = 'active';
+const MAX_UPLOAD_SIZE_MB = 50;
+
+// 5. Organize by Feature, Not Type (Feature-Based Structure)
+// Better for scalability than organizing by file type (e.g., components/, services/, utils/)
+
+// 6. Use Index Files for Aggregation
+// Simplifies imports:
+// features/user/index.js
+export * from './userActions';
+export * from './userReducer';
+
+// 7. Code Linting and Style Guides
+// Use tools like ESLint, Prettier, and follow a consistent style guide (e.g., Airbnb, Google).
+
+// Example Naming in Context
+// Bad
+let a = true;
+let b = [1, 2, 3];
+
+// Good
+let isLoading = true;
+let selectedProductIds = [1, 2, 3];
+
+// Grouped state
+const order = {
+  id: 123,
+  totalPrice: 49.99,
+  isPaid: false
+};
+
 // Qu. How do JavaScript modules handle variable scoping?
 // Ans.
 
