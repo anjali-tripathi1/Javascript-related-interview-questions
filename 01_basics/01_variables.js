@@ -661,5 +661,16 @@ console.log(personal); // { name: "Alice", age: 26, city: "New York" }
 //  This is NOT allowed
 person = { name: "Bob" }; // TypeError
 
+
+
 // Qu. What happens if you access a variable before it's declared with let or const?
-// Ans.
+// Ans. If you access a variable before it's declared using let or const, JavaScript throws a ReferenceError. This behavior is due to what's known as the Temporal Dead Zone (TDZ).
+console.log(x); // ReferenceError: Cannot access 'x' before initialization
+let x = 10;
+
+// Comparison with var:
+console.log(z); // undefined
+var z = 10;
+// With var, the variable is hoisted and initialized with undefined, so no error occurs (though the value isn't useful yet).
+
+
