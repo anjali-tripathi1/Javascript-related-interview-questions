@@ -584,8 +584,53 @@ const order = {
   isPaid: false
 };
 
+
+
+
 // Qu. How do JavaScript modules handle variable scoping?
-// Ans.
+// Ans. JavaScript modules handle variable scoping in a way that helps avoid polluting the global namespace and keeps code modular and maintainable. Here’s how variable scoping works in JavaScript modules:
+
+// 1. Module Scope Is Lexical and Local
+// Variables declared inside a module are scoped to that module only. This means:
+// They are not accessible from the global scope.
+// Other scripts or modules cannot access those variables unless explicitly exported.
+// module.js
+const secret = 'hidden'; // Not accessible outside this module
+
+export const publicValue = 'visible';
+
+// main.js
+import { publicValue } from './module.js';
+
+console.log(publicValue); // 'visible'
+console.log(secret); // ReferenceError: secret is not defined
+
+// 2. Top-Level Variables Do Not Leak Globally
+// In traditional scripts, variables declared without var/let/const can leak to the global scope. But in ES modules:
+// The top-level variables are confined to the module.
+// There is no implicit global variable leakage.
+
+// In an ES module
+someValue = 10; // ReferenceError in strict mode (which modules use by default)
+
+// 3. Strict Mode Is Enabled by Default
+// Modules always run in strict mode, even if you don’t include "use strict";.
+// This affects variable scoping by:
+// Preventing accidental global variable creation.
+// Enforcing block-scoped declarations (let, const)
+
+// 4. No this Refers to Global
+// In modules, this at the top level is undefined, unlike in scripts where it's the window or global object.
+console.log(this); // undefined in a module
+
+
+// 5. Block-Level Scoping with let and const
+// Modules encourage modern JavaScript practices. Use of let and const ensures:
+// Variables are block-scoped.
+// No accidental variable hoisting like with var.
+
+
+
 
 // Qu. Can you modify the contents of a const object or array?
 // Ans.
