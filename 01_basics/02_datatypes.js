@@ -180,11 +180,80 @@ object + 1 // 43
 // Best Practice
 // Avoid implicit coercion when possible, especially with ==. Use === and explicit conversions to make behavior predictable and code more readable.
 
+
+
 // Qu.  What is the difference between == and ===?
-// Ans.
+// Ans. In JavaScript, == and === are comparison operators, but they behave differently:
+
+// == (Equality / Loose Equality)
+// Performs type coercion: It converts the operands to the same type before comparing.
+// Used when you want to check if values are loosely equal, regardless of their type.
+'5' == 5     // true (string '5' is coerced to number 5)
+false == 0   // true
+null == undefined // true
+
+// === (Strict Equality)
+// Does not perform type coercion: It compares both value and type.
+// Used when you want to ensure that the two values are exactly equal.
+'5' === 5    // false (different types: string vs number)
+false === 0  // false
+null === undefined // false
+
+// Rule of Thumb:
+// Use === (strict equality) by default to avoid unexpected behavior from type coercion.
+// Use == only when you explicitly want loose comparison and understand its implications.
+
+
+
+
 
 // Qu. What is NaN in JavaScript? How can you check for it?
-// Ans.
+// Ans. In JavaScript, NaN stands for "Not-a-Number". It is a special value that indicates a value is not a legal number.
+
+// What Causes NaN?
+// NaN is typically the result of:
+// Invalid or undefined mathematical operations
+// Attempting to parse non-numeric strings to numbers
+// Dividing zero by zero
+let e = 0 / 0;           // NaN
+let f = parseInt("abc"); // NaN
+let g = Math.sqrt(-1);   // NaN
+
+// How to Check for NaN
+// Recommended: Number.isNaN(value)
+// This is the safest and most accurate method to check for NaN.
+Number.isNaN(NaN);      // true
+Number.isNaN("hello");  // false
+Number.isNaN(123);      // false
+
+// Legacy: isNaN(value)
+// This global function tries to coerce the value to a number first, which can lead to unexpected results.
+isNaN("hello"); // true (because "hello" coerces to NaN)
+isNaN(NaN);     // true
+isNaN(123);     // false
+
+//  Don't use value === NaN
+// This doesn't work because NaN is not equal to itself:
+NaN === NaN; // false
+
+
+
+
 
 // Qu. What is the result of typeof NaN and why?
-// Ans.
+// Ans. The result of typeof NaN in JavaScript is:
+"number"
+
+// Why?
+// NaN stands for "Not-a-Number", but paradoxically, its type is "number". This is due to how JavaScript was originally designed.
+// Explanation:
+// NaN is a special value in JavaScript that represents an invalid number result (e.g., 0 / 0, parseInt("abc"), etc.).
+// Despite its name, NaN is still classified as a numeric value in JavaScript. It is part of the Number type, according to the ECMAScript specification.
+// So typeof NaN === "number" is technically correct, though confusing to many developers.
+
+console.log(typeof NaN); // "number"
+console.log(isNaN(NaN)); // true
+
+// In summary:
+// NaN is a numeric value that doesn't represent a real number.
+// It's a member of the Number type, hence typeof NaN is "number".
