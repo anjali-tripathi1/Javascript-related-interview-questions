@@ -240,6 +240,7 @@ NaN === NaN; // false
 
 
 
+
 // Qu. What is the result of typeof NaN and why?
 // Ans. The result of typeof NaN in JavaScript is:
 "number"
@@ -257,3 +258,34 @@ console.log(isNaN(NaN)); // true
 // In summary:
 // NaN is a numeric value that doesn't represent a real number.
 // It's a member of the Number type, hence typeof NaN is "number".
+
+
+
+
+
+
+// Qu. Is NaN a data type? Explain.
+// Ans. No, NaN is not a data type. Instead, it is a special value used within certain data types to represent "Not a Number."
+
+// Explanation:
+// NaN stands for "Not a Number".
+// It is commonly used in floating-point data types to indicate the result of an undefined or unrepresentable numerical operation, such as:
+// 0 / 0
+// sqrt(-1) (in real numbers)
+// infinity - infinity
+// In JavaScript: NaN is a global value of type Number.
+
+// Summary:
+//  NaN is a value
+//  NaN is not a standalone data type
+// It exists within data types like float to signal an undefined or missing number.
+
+
+
+
+
+// Qu. What is the default value of an uninitialized variable in JavaScript?
+// Ans. In JavaScript, the default value of an uninitialized variable is undefined.
+let m;
+console.log(m); // Output: undefined
+// In this case, m is declared but not initialized, so its value is undefined.
