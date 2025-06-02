@@ -289,3 +289,90 @@ console.log(isNaN(NaN)); // true
 let m;
 console.log(m); // Output: undefined
 // In this case, m is declared but not initialized, so its value is undefined.
+
+
+
+
+
+// Qu. What is type coercion in JavaScript?
+// Ans. Type coercion in JavaScript is the automatic or implicit conversion of values from one data type to another. It happens when JavaScript expects a certain type but is given a different one, and it tries to convert the value to the expected type.
+// Two Types of Type Coercion
+// Implicit Coercion (automatic by JavaScript)
+// Explicit Coercion (done manually by the developer)
+
+// Implicit Coercion
+// This happens when JavaScript automatically converts types behind the scenes:
+let result = '5' + 2;  // "52" (number 2 is coerced to string)
+let result2 = '5' - 2; // 3 (string '5' is coerced to number)
+let result3 = true + 1; // 2 (true is coerced to 1)
+// Rules:
+// If using + and one operand is a string, JS converts the other to a string.
+// For -, *, /, JavaScript tries to convert both operands to numbers.
+
+// Explicit Coercion
+// This is when you manually convert types using functions or methods:
+String(123);     // "123"
+Number("456");   // 456
+Boolean(0);      // false
+
+// Best Practice
+// To avoid unexpected behavior:
+// Use strict equality (===) instead of loose equality (==) to avoid implicit coercion.
+// Perform explicit conversions when needed.
+
+
+
+
+
+
+// Qu. How is Symbol different from other primitives?
+// Ans. In JavaScript, Symbol is a primitive data type, just like string, number, boolean, null, undefined, and bigint. However, it has several unique characteristics that make it different from other primitives:
+//  1. Uniqueness
+// Every Symbol value is guaranteed to be unique, even if created with the same description:
+const sym1 = Symbol('desc');
+const sym2 = Symbol('desc');
+console.log(sym1 === sym2); // false
+// This makes Symbol ideal for creating unique property keys in objects to avoid naming conflicts.
+
+//  2. Not Auto-Coerced to String
+// Unlike most primitives, Symbol cannot be automatically converted to a string. Trying to concatenate or display it directly will throw an error:
+const sym = Symbol('id');
+console.log('My symbol is ' + sym); // TypeError
+// You must explicitly convert it using String(sym) or sym.toString().
+
+//  3. Use as Object Property Keys
+// Symbols can be used as object keys, and those keys are non-enumerable by default (i.e., they don’t show up in for...in, Object.keys(), etc.):
+const id = Symbol('id');
+const username = {
+  name: 'Alice',
+  [id]: 123
+};
+// This allows developers to create hidden or internal properties.
+
+// 4. Global Symbol Registry
+// Symbols created using Symbol.for(key) are stored in a global registry:
+const symb1 = Symbol.for('shared');
+const symb2 = Symbol.for('shared');
+console.log(symb1 === symb2); // true
+// Useful for sharing symbols across different parts of code or modules.
+
+
+
+
+// Qu. How do JavaScript data types differ from Java or Python?
+// Ans. 
+
+
+
+// Qu. Is typeof a reliable way to determine a data type?
+// Ans. 
+
+
+
+// Qu. What are falsy values in JavaScript?
+// Ans. 
+
+
+
+// Qu. How can you check if a variable is an array?
+// Ans. 
