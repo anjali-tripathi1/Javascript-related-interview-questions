@@ -459,7 +459,30 @@ typeof function(){} // "function"
 
 
 // Qu. What are falsy values in JavaScript?
-// Ans. 
+// Ans. In JavaScript, falsy values are values that, when evaluated in a Boolean context, are considered false.
+// There are exactly seven falsy values in JavaScript:
+// false – the Boolean value false itself.
+// 0 – the number zero.
+// -0 – negative zero.
+// 0n – BigInt zero.
+// "" – an empty string (single or double quotes).
+// null – the absence of any value.
+// undefined – a variable that has been declared but not assigned a value.
+// NaN – Not-a-Number.
+if (!false) console.log("Falsy");     // Falsy
+if (!0) console.log("Falsy");         // Falsy
+if (!"") console.log("Falsy");        // Falsy
+if (!null) console.log("Falsy");      // Falsy
+if (!undefined) console.log("Falsy"); // Falsy
+if (!NaN) console.log("Falsy");       // Falsy
+
+// All other values are truthy, meaning they evaluate to true in a Boolean context, including:
+// Non-zero numbers (e.g., 1, -42)
+// Non-empty strings (e.g., "hello")
+// Arrays ([])
+// Objects ({})
+// Functions
+
 
 
 
