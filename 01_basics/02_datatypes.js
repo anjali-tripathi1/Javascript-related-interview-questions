@@ -487,4 +487,9 @@ if (!NaN) console.log("Falsy");       // Falsy
 
 
 // Qu. How can you check if a variable is an array?
-// Ans. 
+// Ans. To check if a variable is an array, the method depends on the programming language you're using.
+
+// JavaScript
+// Use Array.isArray():
+let arr = [1, 2, 3];
+console.log(Array.isArray(arr)); // true
