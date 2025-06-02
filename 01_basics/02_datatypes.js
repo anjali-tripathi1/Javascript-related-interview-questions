@@ -430,7 +430,31 @@ console.log(symb1 === symb2); // true
 
 
 // Qu. Is typeof a reliable way to determine a data type?
-// Ans. 
+// Ans. The typeof operator in JavaScript is useful but not always reliable for determining data types due to some quirks and limitations.
+// When typeof works reliably:
+typeof "hello"     // "string"
+typeof 42          // "number"
+typeof true        // "boolean"
+typeof undefined   // "undefined"
+typeof Symbol()    // "symbol"
+typeof BigInt(1)   // "bigint"
+typeof function(){} // "function"
+// These are all accurate and consistent.
+
+//  When typeof is problematic or misleading:
+// Value	                 typeof result	                          Why it's problematic
+// null	                     "object"                     	This is a long-standing bug in JavaScript.
+// Array.isArray([])	  true, but typeof [] is "object"  	  Arrays are objects; use Array.isArray() instead.
+// typeof new Date()	        "object"	                    Cannot distinguish Date objects from other objects.
+// typeof {}	                "object"	                    Same as with arrays — not specific.
+// typeof NaN	                "number"	                    Technically true, but NaN is a special case.
+
+// Summary:
+// Use typeof for primitives (string, number, boolean, undefined, symbol, bigint, function).
+// Use Array.isArray() for arrays.
+// Use instanceof or Object.prototype.toString.call() for more detailed type checks.
+
+
 
 
 
