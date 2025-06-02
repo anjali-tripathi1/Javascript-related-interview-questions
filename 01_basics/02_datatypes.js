@@ -360,7 +360,72 @@ console.log(symb1 === symb2); // true
 
 
 // Qu. How do JavaScript data types differ from Java or Python?
-// Ans. 
+// Ans. JavaScript, Java, and Python are all popular programming languages, but they handle data types in different ways due to differences in language design, typing systems, and runtime behavior. 
+// 1. Typing System
+// Feature	              JavaScript	            Java	                         Python
+// Typing	            Dynamically typed	       Statically typed	          Dynamically typed
+// Type checking	       At runtime        	   At compile time	            At runtime
+// Type inference	  Some (with TypeScript)	  Yes (some in newer versions)	  Yes (dynamic, implicit)
+
+// 2. Primitive Data Types
+
+// JavaScript Primitives:
+// Number (all numbers, including floats and ints)
+// String
+// Boolean
+// undefined
+// null
+// Symbol
+// BigInt
+
+// Java Primitives:
+// int, long, short, byte
+// float, double
+// char
+// boolean
+
+// Python Primitives (Built-in types):
+// int
+// float
+// str
+// bool
+// NoneType (similar to null)
+
+// Key Differences:
+
+// JavaScript has a single Number type for both integers and floats.
+// Java has fixed-size primitive types (e.g., int is 32-bit).
+// Python supports arbitrary-precision integers by default.
+// JavaScript’s undefined and null are separate (unlike Python's None or Java's null).
+
+// 3. Objects and Complex Types
+
+// JavaScript:
+// Objects are key-value pairs; almost everything (except primitives) is an object.
+// Arrays are a type of object.
+// Functions are first-class objects.
+
+// Java:
+// Objects are instances of classes.
+// Arrays are a distinct type, not general objects.
+// Functions are not first-class citizens (until Java 8+ with lambdas).
+
+// Python:
+// Everything is an object (even functions, classes, and types).
+// Lists, dictionaries, sets, and tuples are built-in types.
+// Functions are first-class objects.
+
+// Key Differences:
+// JavaScript uses prototypes for inheritance; Java and Python use classes (Python supports multiple inheritance).
+// Java is more rigid due to strong typing; JavaScript and Python are more flexible but risk runtime errors.
+
+//  4. Special/Undefined Values
+// Concept	          JavaScript	   Java	     Python
+// Null value           	null       null	      None
+// Undefined value	    undefined	   N/A       	N/A
+// Not a Number	           NaN	  Double.NaN	  float('nan')
+// JavaScript has both null and undefined, which can be a source of confusion.
+
 
 
 
