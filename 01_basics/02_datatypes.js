@@ -493,3 +493,9 @@ if (!NaN) console.log("Falsy");       // Falsy
 // Use Array.isArray():
 let arr = [1, 2, 3];
 console.log(Array.isArray(arr)); // true
+
+
+
+
+// Qu. What does typeof null return? Why is that considered a bug in JavaScript?
+// Ans. 
