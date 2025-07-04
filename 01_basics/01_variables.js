@@ -126,6 +126,35 @@ console.log(x); // undefined
 
 
 // Qu. How do let and const handle block scoping differently than var?
+// Ans. let and const handle block scoping very differently from var, which is one of the key differences in JavaScript variable declarations.
+
+// var: Function-Scoped
+// A variable declared with var is scoped to the nearest function, not the nearest block (like an if, for, or while).
+// It ignores block boundaries and "leaks" out of them.
+// var declarations are hoisted to the top of their scope and initialized as undefined.
+
+function example() {
+  if (true) {
+    var x = 10;
+  }
+  console.log(x); // 10 — `x` is accessible here
+}
+
+// let and const: Block-Scoped
+// Both let and const are scoped to the nearest block (anything inside { }).
+// They do not leak out of their block.
+// They are also hoisted, but not initialized, meaning they exist in a "temporal dead zone" from the start of the block until the declaration is encountered.
+
+function example() {
+  if (true) {
+    let y = 20;
+    const z = 30;
+  }
+  console.log(y); // ReferenceError: y is not defined
+  console.log(z); // ReferenceError: z is not defined
+}
+
+
 
 // Qu. What is the difference between undefined and null?
 // Ans. undefined is a type in itself. It means variable is declared but value is not assigned.
