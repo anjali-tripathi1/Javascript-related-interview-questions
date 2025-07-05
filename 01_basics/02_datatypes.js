@@ -3,6 +3,9 @@
 
 // Basic Level
 
+// Qu. What are the different data types in JavaScript?
+// Ans. In JavaScript, data types are broadly categorized into primitive types and reference types.
+
 // Qu. What are the primitive data types in JavaScript?
 // Ans. There are 7 types of primitive datatypes.
 // 1. Number 
@@ -498,4 +501,185 @@ console.log(Array.isArray(arr)); // true
 
 
 // Qu. What does typeof null return? Why is that considered a bug in JavaScript?
-// Ans. 
+// Ans. In JavaScript:
+
+typeof null // returns "object"
+
+// Why is it considered a bug?
+// Because semantically, null is not an object — it represents the absence of any object value. This makes its typeof result misleading and unintuitive:
+
+typeof {}       // "object"
+typeof []       // "object"
+typeof null     // "object" <-- misleading!
+
+// Why hasn't it been fixed?
+// Changing this behavior now would break a huge amount of existing code, which relies on typeof null === "object" for backward compatibility. JavaScript values stability and backward compatibility, so the bug remains — now considered a "legacy quirk" rather than a fixable issue.
+
+// To check for null, use:
+value === null
+// Rather than relying on typeof.
+
+
+// Qu. How are primitive and reference types stored in memory?
+// Ans. In JavaScript, primitive types and reference types are stored differently in memory, which affects how they behave — especially when assigned or passed to functions.
+// Feature	                 Primitive	                       Reference
+// Stored in	                  Stack	                 Heap (referenced from stack)
+// Stored as	                 Actual value	             Reference (pointer)
+// Mutability	                  Immutable	                   Mutable
+// Assignment	                Creates a copy	            Copies the reference
+
+// Primitive Types
+// (Stored directly in the stack)
+// Memory Behavior:
+// Primitives are immutable and stored by value.
+// Each variable holds its own copy of the value.
+
+let c = 10;
+let d = a;
+b = 20;
+console.log(a); // 10 (not affected by b)
+
+// Stack:
+// c → 10
+// d → 20
+
+
+// Reference Types
+// (Stored in the heap, reference stored in the stack)
+// Memory Behavior:
+// Stored by reference.
+// The stack holds a pointer (reference) to the object in the heap.
+// If two variables point to the same object, changes via one variable affect the other.
+
+let obj2 = { name: "Alice" };
+let obj3 = obj1;
+obj3.name = "Bob";
+console.log(obj2.name); // "Bob"
+
+
+// Stack:
+// obj2 → 🡒 (ref) → Heap: { name: "Bob" }
+// obj3 → 🡒 (same ref)
+
+// Heap:
+// { name: "Bob" }
+
+
+
+// Qu. What is the difference between shallow copy and deep copy?
+// Ans. The difference between shallow copy and deep copy lies in how they copy compound objects (like lists, dictionaries, or custom objects) and the references they maintain to nested objects.
+
+
+// Qu. How does assigning one object to another variable work in JavaScript?
+
+// Qu. What are different ways to check the data type of a variable?
+
+// Qu. What does the instanceof operator do?
+
+// Qu. What is the difference between implicit and explicit type conversion?
+
+// Qu. How can you convert a string to a number in JavaScript?
+
+// Qu. How do you convert a number to a string?
+
+// 
+
+
+
+// Intermediate level 
+
+// Qu. What is the difference between Array and Object data types?
+
+// Qu. What are template literals and what data type do they return?
+
+// Qu. How does JavaScript treat numbers and BigInt?
+
+// Qu. What is Symbol in JavaScript and when would you use it?
+
+// Qu. Explain the typeof return values for various built-in types (e.g., functions, arrays, null). 
+
+// Qu. What is NaN and how is it different from undefined or null?
+
+// Qu. Why is typeof NaN === "number"?
+
+// Qu. What is the difference between Infinity, -Infinity, and NaN?
+
+// Qu. What is the isNaN() function and how does it work?
+
+// Qu. What is the difference between Number.isNaN() and isNaN()?
+
+// Qu. What are BigInt numbers? How do they differ from regular numbers?
+
+// Qu. How are strings represented in JavaScript?
+
+// Qu. What are template literals?
+
+// Qu. What is a Symbol? Why would you use one?
+
+// Qu. Can you use Symbols as object keys? Why or why not?
+
+// Qu. How are arrays different from objects in JavaScript?
+
+// Qu. How can you clone an object in JavaScript?
+
+// Qu. How do you check if a value is an object?
+
+// Qu. What is the difference between a Map and an Object?
+
+// Qu. What is the difference between a Set and an Array?
+
+// Qu. What is the difference between Object.create() and a constructor function?
+
+// Qu. What are WeakMap and WeakSet?
+
+// Qu. When would you use a WeakMap or WeakSet over Map/Set?
+
+// Qu. How does JavaScript garbage collection relate to WeakMaps?
+
+// Qu. What are typed arrays in JavaScript?
+
+// Qu. What is the type of a function in JavaScript?
+
+// Qu. Can functions be assigned to variables? Why?
+
+// Qu. What is the difference between function declarations and function expressions?
+
+// Qu. What is a callback function?
+
+// Qu. How do closures affect the data types captured inside?
+
+
+// Advanced Level
+// Qu. How does JavaScript internally represent different data types (boxed objects vs primitives)?
+
+// Qu. What are wrapper objects in JavaScript? (e.g., new String("abc"))
+
+// Qu. How are objects compared in JavaScript?
+
+// Qu. Explain the difference between shallow copy and deep copy. How do data types affect this?
+
+// Qu. How can you clone an object properly in JavaScript?
+
+// Qu. What is structural typing vs nominal typing, and how does JavaScript handle types?
+
+// Qu. Why is typeof NaN equal to 'number'? What’s the rationale behind it?
+
+// Qu. What are typed arrays in JavaScript? When would you use them?
+
+// Qu. What is a WeakMap and WeakSet, and how do they relate to object data types?
+
+// Qu. Why is typeof [] equal to "object"?
+
+// Qu. Why is typeof function() {} equal to "function" but still technically an object?
+
+// Qu. What are wrapper objects (new Number(), new String(), etc.), and why should you avoid them?
+
+// Qu. How is equality checked for objects vs primitive values?
+
+// Qu. What’s the difference between deep equality and shallow equality?
+
+// Qu. What happens when you use JSON.stringify() on different data types?
+
+// Qu. What values are falsy in JavaScript?
+
+// Qu. What is autoboxing in JavaScript?
