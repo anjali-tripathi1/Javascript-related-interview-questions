@@ -567,10 +567,57 @@ console.log(obj2.name); // "Bob"
 
 
 // Qu. What is the difference between shallow copy and deep copy?
-// Ans. The difference between shallow copy and deep copy lies in how they copy compound objects (like lists, dictionaries, or custom objects) and the references they maintain to nested objects.
+// Ans. In JavaScript, shallow copy and deep copy refer to how objects and arrays are duplicated—specifically how nested objects or arrays are handled in the copy.
+
+// Shallow Copy
+// A shallow copy creates a new object or array, but only copies references to nested objects/arrays instead of duplicating them.
+// Copies:
+// Primitive values (strings, numbers, booleans)
+// Top-level properties
+
+const original = { a: 1, b: { c: 2 } };
+const shallow = { ...original };
+
+shallow.b.c = 42;
+
+console.log(original.b.c); // 42 — affected!
+
+// Common Methods:
+// Object.assign({}, obj)
+// Spread syntax: { ...obj } or [...array]
+
+//  Deep Copy
+// A deep copy recursively copies all properties and nested structures, ensuring completely independent objects.
+// Copies:
+// Everything, including nested objects/arrays
+
+const original1 = { a: 1, b: { c: 2 } };
+const deep = JSON.parse(JSON.stringify(original1));
+
+deep.b.c = 42;
+
+console.log(original1.b.c); // 2 — unaffected!
+
+// JSON.parse(JSON.stringify(obj)) doesn't handle functions, undefined, symbols, or circular references well.
+
 
 
 // Qu. How does assigning one object to another variable work in JavaScript?
+// Ans. In JavaScript, when you assign one object to another variable, you’re assigning a reference to that object, not a copy of the object.
+
+let obj3 = { name: 'Alice' };
+let obj4 = obj3;
+
+obj4.name = 'Bob';
+
+console.log(obj3.name); // 'Bob'
+
+// What’s happening:
+// obj1 holds a reference to an object: { name: 'Alice' }
+// obj2 = obj1 makes obj2 point to the same object in memory.
+// Changing obj2.name also changes obj1.name because they both point to the same object.
+
+
 
 // Qu. What are different ways to check the data type of a variable?
 
