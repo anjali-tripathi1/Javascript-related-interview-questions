@@ -620,8 +620,87 @@ console.log(obj3.name); // 'Bob'
 
 
 // Qu. What are different ways to check the data type of a variable?
+// Ans. In JavaScript, there are several ways to check the data type of a variable. Each method has its own use case, strengths, and limitations.
+
+//  1. typeof Operator
+// The most commonly used way to check primitive types.
+typeof 42;               // "number"
+typeof "hello";          // "string"
+typeof true;             // "boolean"
+typeof undefined;        // "undefined"
+typeof Symbol();         // "symbol"
+typeof BigInt(123);      // "bigint"
+
+typeof null;             // "object"  (quirk of JS)
+typeof [1, 2, 3];        // "object"
+typeof {a: 1};           // "object"
+typeof function() {};    // "function"
+// Limitation: Cannot distinguish between objects like arrays, null, or Date.
+
+
+// 2. instanceof Operator
+// Checks if an object is an instance of a constructor.
+[] instanceof Array;                   // true
+new Date() instanceof Date;           // true
+// {} instanceof Object;                // true
+// function(){}  instanceof Function;   // true
+// Limitation: Doesn’t work well across different execution contexts (like iframes).
+
+
+// 3. Object.prototype.toString.call()
+// More reliable for complex types.
+Object.prototype.toString.call(42);           // "[object Number]"
+Object.prototype.toString.call("hello");      // "[object String]"
+Object.prototype.toString.call([]);           // "[object Array]"
+Object.prototype.toString.call(null);         // "[object Null]"
+Object.prototype.toString.call(undefined);    // "[object Undefined]"
+Object.prototype.toString.call(new Date());   // "[object Date]"
+Object.prototype.toString.call(() => {});     // "[object Function]"
+// Most precise and avoids pitfalls of typeof.
+
+
+// 4. constructor Property
+// You can access the constructor of an object:
+let array = [1, 2, 3];
+array.constructor === Array;       // true
+
+let str = "hello";
+str.constructor === String;      // true
+//  Limitation: Can be tampered with (e.g., someone overrides .constructor).
+
+
+// 5. ES6 Array.isArray()
+// Specially made to check if a value is an array:
+Array.isArray([]);         // true
+Array.isArray({});         // false
+
 
 // Qu. What does the instanceof operator do?
+// Ans. The instanceof operator in JavaScript (and some other object-oriented languages) is used to check whether an object is an instance of a particular constructor or class.
+object instanceof Constructor
+
+// What it does:
+// It returns true if the prototype property of the constructor appears anywhere in the prototype chain of the object.
+// Otherwise, it returns false.
+function Animal() {}
+let dog = new Animal();
+
+console.log(dog instanceof Animal); // true
+console.log(dog instanceof Object); // true (because all objects inherit from Object)
+console.log(dog instanceof Array);  // false
+
+// With classes:
+class Person {}
+let userOne = new Person();
+console.log(userOne instanceof Person); // true
+
+// Key Notes:
+// It checks inheritance, not just direct creation.
+// It's reliable for custom classes and constructor functions.
+// For primitives (like numbers or strings), it returns false:
+
+
+
 
 // Qu. What is the difference between implicit and explicit type conversion?
 
