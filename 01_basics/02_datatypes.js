@@ -703,6 +703,40 @@ console.log(userOne instanceof Person); // true
 
 
 // Qu. What is the difference between implicit and explicit type conversion?
+// Ans. In JavaScript, the difference between implicit and explicit type conversion is particularly important because JavaScript is a dynamically typed language, and type coercion can sometimes lead to unexpected results.
+
+// Implicit Type Conversion (Type Coercion)
+// Performed automatically by JavaScript
+// Happens during operations between different types
+// JavaScript tries to coerce values to a common type
+
+let resultOne = '5' + 2;
+console.log(resultOne); // "52" (number 2 is coerced to string)
+
+let resultTwo = '5' * 2;
+console.log(resultTwo); // 10 (string '5' is coerced to number)
+// JS decides whether to convert to string, number, or boolean based on the operator and context.
+
+// Explicit Type Conversion (Type Casting)
+// Performed manually using built-in functions
+// You intentionally convert a value to a specific type
+
+let str1 = "123";
+let num = Number(str1);    // Explicitly converting string to number
+console.log(num);         // 123
+
+let n = 456;
+let str2 = String(n);     // Explicitly converting number to string
+console.log(str2);        // "456"
+
+// Common Pitfalls with Implicit Coercion
+false == 0          // true
+null == undefined   // true
+' ' == 0            // true
+// [] == ''            // true
+// Always be cautious with == in JavaScript. Use === for strict equality to avoid unwanted coercion.
+
+
 
 // Qu. How can you convert a string to a number in JavaScript?
 
