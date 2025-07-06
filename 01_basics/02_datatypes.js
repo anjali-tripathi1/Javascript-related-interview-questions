@@ -752,6 +752,18 @@ let strTwo = "42";
 let numberTwo = parseInt(strTwo);
 console.log(numberTwo); // 42
 
+// 3. Using parseFloat()
+// Parses the string and returns a floating-point number.
+let strThree = "3.14";
+let numberThree = parseFloat(strThree);
+console.log(numberThree); // 3.14
+
+// 4. Using the Unary + Operator
+// A concise way to convert a string to a number.
+let strFour = "42";
+let numberFour = +strFour;
+console.log(numberFour); // 42
+
 
 // Qu. How do you convert a number to a string?
 
