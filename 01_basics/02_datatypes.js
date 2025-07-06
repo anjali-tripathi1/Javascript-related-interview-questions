@@ -764,6 +764,17 @@ let strFour = "42";
 let numberFour = +strFour;
 console.log(numberFour); // 42
 
+// 5. Using Math.floor() or Math.ceil() (if applicable)
+// These will also coerce the string into a number if it's numeric.
+let strFive = "42.9";
+let number5 = Math.floor(strFive);
+console.log(number5); // 42
+
+// Notes:
+// If the string is not a valid number, methods like Number() or unary + will return NaN.
+// parseInt() and parseFloat() are more forgiving and will parse as much as possible.
+
+
 
 // Qu. How do you convert a number to a string?
 
