@@ -739,6 +739,19 @@ null == undefined   // true
 
 
 // Qu. How can you convert a string to a number in JavaScript?
+// Ans. In JavaScript, there are several ways to convert a string to a number. Here are the most common methods:
+// 1. Using Number()
+// Converts the string to a number.
+let strOne = "42";
+let number = Number(strOne);
+console.log(number); // 42
+
+// 2. Using parseInt()
+// Parses the string and returns an integer.
+let strTwo = "42";
+let numberTwo = parseInt(strTwo);
+console.log(numberTwo); // 42
+
 
 // Qu. How do you convert a number to a string?
 
