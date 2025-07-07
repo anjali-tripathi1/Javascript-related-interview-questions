@@ -788,6 +788,13 @@ let num2 = 123;
 let str6 = String(num2);
 console.log(str6); // "123"
 
+// 3. Using string concatenation
+let num3 = 123;
+let str7 = num3 + "";
+console.log(str7); // "123"
+
+// All three methods are valid. toString() is method-based, String() is function-based, and + "" is often used in quick or concise code, though it may be less readable.
+
 
 // Intermediate level 
 
