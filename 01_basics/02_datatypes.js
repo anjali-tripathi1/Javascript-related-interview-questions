@@ -800,13 +800,39 @@ console.log(str7); // "123"
 
 // Qu. What is the difference between Array and Object data types?
 // Ans. The difference between Array and Object data types lies in how they store and access data.
+//  Array
+// Definition: An ordered collection of values.
+// Indexing: Uses numeric indices (starting at 0).
+// Use Case: When you want to store a list of items in a specific order (e.g., list of names, numbers).
 
-// 1. Structure & Use Case
-// Feature	                      Array	                            Object
-// Definition	            Ordered list of values	             Unordered collection of key-value pairs
-// Use case	            Store a sequence of elements             Store related data in key-value format (e.g. 
-                        // (e.g. list of numbers, names)	                      details like age)  name,              //  user 
-// 
+let fruits = ['apple', 'banana', 'cherry'];
+console.log(fruits[0]); // 'apple'
+
+// Key Characteristics:
+// Maintains order of elements.
+// Values are accessed by index.
+// Ideal for iteration and enumeration.
+
+
+//  Object
+// Definition: An unordered collection of key-value pairs.
+// Key Type: Keys are usually strings (or symbols in JavaScript).
+// Use Case: When you want to represent data as properties with named labels.
+
+let person = {
+  name: 'Alice',
+  age: 30
+};
+console.log(person['name']); // 'Alice'
+
+// Key Characteristics:
+// Unordered by default (though modern engines often preserve insertion order).
+// Accessed using keys (e.g., object['key'] or object.key).
+// Best for storing structured data.
+
+
+
+
 // Qu. What are template literals and what data type do they return?
 // Ans. 
 
