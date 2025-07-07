@@ -799,32 +799,52 @@ console.log(str7); // "123"
 // Intermediate level 
 
 // Qu. What is the difference between Array and Object data types?
+// Ans. The difference between Array and Object data types lies in how they store and access data.
 
+// 1. Structure & Use Case
+// Feature	                      Array	                            Object
+// Definition	            Ordered list of values	             Unordered collection of key-value pairs
+// Use case	            Store a sequence of elements             Store related data in key-value format (e.g. 
+                        // (e.g. list of numbers, names)	                      details like age)  name,              //  user 
+// 
 // Qu. What are template literals and what data type do they return?
+// Ans. 
 
 // Qu. How does JavaScript treat numbers and BigInt?
+// Ans. 
 
 // Qu. What is Symbol in JavaScript and when would you use it?
+// Ans. 
 
 // Qu. Explain the typeof return values for various built-in types (e.g., functions, arrays, null). 
+// Ans. 
 
 // Qu. What is NaN and how is it different from undefined or null?
+// Ans. 
 
 // Qu. Why is typeof NaN === "number"?
+// Ans. 
 
 // Qu. What is the difference between Infinity, -Infinity, and NaN?
+// Ans. 
 
 // Qu. What is the isNaN() function and how does it work?
+// Ans. 
 
 // Qu. What is the difference between Number.isNaN() and isNaN()?
+// Ans. 
 
 // Qu. What are BigInt numbers? How do they differ from regular numbers?
+// Ans. 
 
 // Qu. How are strings represented in JavaScript?
+// Ans. 
 
 // Qu. What are template literals?
+// Ans. 
 
 // Qu. What is a Symbol? Why would you use one?
+// Ans. 
 
 // Qu. Can you use Symbols as object keys? Why or why not?
 
