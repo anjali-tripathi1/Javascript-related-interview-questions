@@ -777,9 +777,16 @@ console.log(number5); // 42
 
 
 // Qu. How do you convert a number to a string?
+// Ans. In JavaScript, you can convert a number to a string in several ways.
+// 1. Using toString() method
+let num1 = 123;
+let str5 = num1.toString();
+console.log(str5); // "123"
 
-// 
-
+// 2. Using String() function
+let num2 = 123;
+let str6 = String(num2);
+console.log(str6); // "123"
 
 
 // Intermediate level 
