@@ -903,7 +903,68 @@ Number(10n) + 10; // OK
 
 
 // Qu. What is Symbol in JavaScript and when would you use it?
-// Ans. 
+// Ans. In JavaScript, a Symbol is a primitive data type introduced in ES6 (ECMAScript 2015). It’s used to create unique identifiers for object properties, which are guaranteed not to clash with any other property, even if the same name is used.
+
+// What Is a Symbol?
+// A Symbol is created using the Symbol() function:
+const mySymbol = Symbol();
+
+// You can also give it an optional description for debugging purposes:
+const idSymbol = Symbol('id');
+
+// Key Characteristics
+// Uniqueness: Every symbol is unique, even if they have the same description:
+Symbol('foo') === Symbol('foo'); // false
+
+// Non-enumerable by default: Symbol-keyed properties do not appear in for...in, Object.keys(), or JSON.stringify().
+// Use-case: Typically used to create hidden or special properties in objects to avoid accidental overwrites.
+
+// When Would You Use a Symbol?
+//  1. Avoid Property Name Collisions
+// If you're working with objects that might be extended or modified by others (e.g., in a library), you can use symbols to avoid clashing with existing or future property names.
+const SECRET = Symbol('secret');
+
+const obje = {
+  [SECRET]: 'hidden value'
+};
+
+console.log(obje[SECRET]); // 'hidden value'
+
+
+// 2. Implement Private-like Properties (Soft Privacy)
+// Symbols can be used to simulate private properties (though not fully private):
+const _password = Symbol('password');
+
+class User {
+  constructor(password) {
+    this[_password] = password;
+  }
+
+  checkPassword(pw) {
+    return this[_password] === pw;
+  }
+}
+
+// 3. Custom Behavior with Well-Known Symbols
+// JavaScript defines several well-known Symbols to customize language behavior:
+// Symbol.iterator — Makes an object iterable
+// Symbol.toPrimitive — Customize how an object converts to a primitive
+// Symbol.toStringTag — Customize [object Object] output
+const myIterable = {
+  *[Symbol.iterator]() {
+    yield 1;
+    yield 2;
+    yield 3;
+  }
+};
+
+for (let value of myIterable) {
+  console.log(value); // 1, 2, 3
+}
+
+
+
+
 
 // Qu. Explain the typeof return values for various built-in types (e.g., functions, arrays, null). 
 // Ans. 
