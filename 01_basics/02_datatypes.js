@@ -882,7 +882,15 @@ let big = 9007199254740993n;
 let big2 = BigInt("123456789012345678901234567890");
 
 // Operations: Supports +, -, *, /, %, etc.
-// let a = 10n + 20n; // 30n
+let j = 10n + 20n; // 30n
+
+// Limitations:
+// Cannot mix number and bigint directly:
+10n + 10; // TypeError
+
+// Use explicit conversion if needed:
+BigInt(10) + 10n; // OK
+Number(10n) + 10; // OK
 
 
 
