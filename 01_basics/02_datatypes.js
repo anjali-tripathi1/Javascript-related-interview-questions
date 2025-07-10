@@ -834,10 +834,60 @@ console.log(person['name']); // 'Alice'
 
 
 // Qu. What are template literals and what data type do they return?
-// Ans. 
+// Ans. Template literals (also known as template strings) are a feature in JavaScript that allow you to embed expressions within string literals. They're enclosed by backticks (`) instead of regular single (') or double (") quotes.
+const name = 'Alice';
+const greeting = `Hello, ${name}!`;
+console.log(greeting); // Output: Hello, Alice!
+
+// Key Features:
+// String interpolation using ${} to insert variables or expressions.
+// Multi-line strings without needing escape characters.
+// Supports expression evaluation within the placeholder.
+
+// Data Type Returned:
+// Template literals always return a string.
+typeof greeting; // "string"
+
+// More Examples:
+const p = 5;
+const q = 10;
+console.log(`The sum of ${p} and ${q} is ${p + q}`);
+// Output: "The sum of 5 and 10 is 15"
+
+
 
 // Qu. How does JavaScript treat numbers and BigInt?
-// Ans. 
+// Ans. JavaScript treats numbers and BigInt as distinct types used for numerical values, but they behave differently in terms of precision, size, and operations.
+
+// 1. Numbers in JavaScript
+// Type: number
+// Representation: Follows the IEEE 754 double-precision floating-point standard (64-bit).
+// Range:
+// Max safe integer: Number.MAX_SAFE_INTEGER = 2^53 - 1 (≈ 9 quadrillion)
+// Min safe integer: Number.MIN_SAFE_INTEGER = -(2^53 - 1)
+// Precision: Up to 15–17 decimal digits.
+let w = 42;          // integer
+let v = 3.14;        // float
+let z = 1e21;        // exponential notation
+
+// Limitations: Precision issues with large integers:
+console.log(9007199254740992 === 9007199254740993); // true (should be false)
+
+
+// 2. BigInt in JavaScript
+// Type: bigint
+// Purpose: Represents integers larger than Number.MAX_SAFE_INTEGER, with arbitrary precision.
+// Created by: Appending n to the end of an integer or using BigInt().
+let big = 9007199254740993n;
+let big2 = BigInt("123456789012345678901234567890");
+
+// Operations: Supports +, -, *, /, %, etc.
+// let a = 10n + 20n; // 30n
+
+
+
+
+
 
 // Qu. What is Symbol in JavaScript and when would you use it?
 // Ans. 
