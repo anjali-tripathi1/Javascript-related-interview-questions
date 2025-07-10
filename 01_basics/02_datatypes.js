@@ -892,6 +892,11 @@ let j = 10n + 20n; // 30n
 BigInt(10) + 10n; // OK
 Number(10n) + 10; // OK
 
+// When to Use What
+// Use number for general-purpose math, including decimals and performance-sensitive code.
+// Use bigint when working with large integers (e.g., cryptography, precise counters) that exceed the safe range of number.
+
+
 
 
 
