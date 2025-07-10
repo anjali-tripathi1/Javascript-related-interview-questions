@@ -967,7 +967,65 @@ for (let value of myIterable) {
 
 
 // Qu. Explain the typeof return values for various built-in types (e.g., functions, arrays, null). 
-// Ans. 
+// Ans. In JavaScript, the typeof operator returns a string that indicates the type of a given value. While it's mostly straightforward, there are a few quirks you should be aware of—especially with things like null and arrays.
+
+// typeof Return Values for Common Built-in Types
+// Value	               typeof Result	                       Notes
+// undefined	              'undefined'	     The type of an uninitialized variable or undefined itself.
+// null	                    'object'	              Quirk! Legacy behavior due to early JavaScript bug.
+// true, false	            'boolean'	                        Standard boolean values.
+// 42, 3.14, NaN	          'number'	          All numbers (including NaN and Infinity) return 'number'.    
+// "hello", 'world'	        'string'	              Any string literal or object coerced to string.
+// Symbol('id')	            'symbol'	             ES6 feature. Unique and immutable identifiers.
+// 10n (BigInt)	            'bigint'	               ES2020 feature for arbitrarily large integers.
+// function() {}	          'function'	       Only functions return 'function' (a subtype of object).
+// [] (Array)	              'object'	       Arrays are objects; use Array.isArray() to distinguish.
+// {} (Object literal)	    'object'	                       Standard object.
+// new Date()	              'object'	                    Built-in object type.
+// class Foo {}	            'function'	         Classes are technically special functions.
+
+
+// Key Quirks and Gotchas
+//  typeof null === 'object'
+// This is a well-known JavaScript bug:
+typeof null; // "object"
+// This behavior stems from the early days of JavaScript and cannot be fixed due to backward compatibility.
+
+// Arrays are 'object'
+typeof [];         // "object"
+Array.isArray([]); // true
+// To accurately check if something is an array, use Array.isArray().
+
+//  Functions have a special type
+typeof function(){}; // "function"
+// This is the only "subtype" that typeof exposes directly.
+
+// NaN is a number
+typeof NaN; // "number"
+// Because NaN stands for “Not-a-Number”, it's ironically still of type 'number'.
+
+// How to Better Check Types
+// For more precise checks, you can use:
+Object.prototype.toString.call(value);
+// Examples:
+Object.prototype.toString.call(null);     // "[object Null]"
+Object.prototype.toString.call([]);       // "[object Array]"
+Object.prototype.toString.call(() => {}); // "[object Function]"
+
+// Summary Table of typeof Results
+typeof undefined      // "undefined"
+typeof null           // "object"    //  quirk
+typeof true           // "boolean"
+typeof 42             // "number"
+typeof "hello"        // "string"
+typeof Symbol()       // "symbol"
+typeof 10n            // "bigint"
+typeof []             // "object"    // Use Array.isArray()
+typeof {}             // "object"
+typeof function() {}  // "function"
+typeof class X {}     // "function"
+
+
 
 // Qu. What is NaN and how is it different from undefined or null?
 // Ans. 
