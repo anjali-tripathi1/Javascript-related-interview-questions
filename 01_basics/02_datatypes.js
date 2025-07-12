@@ -1028,7 +1028,39 @@ typeof class X {}     // "function"
 
 
 // Qu. What is NaN and how is it different from undefined or null?
-// Ans. 
+// Ans. the differences between NaN, undefined, and null, especially in the context of JavaScript, where these terms are commonly used.
+// NaN (Not-a-Number)
+// Type: number
+// Meaning: A value that is not a valid number, even though it’s technically of the number type.
+// When it appears: Usually when a mathematical operation fails.
+let resul = 0 / 0;       // NaN
+parseInt("abc");          // NaN
+Math.sqrt(-1);            // NaN
+
+// Key behavior:
+// NaN === NaN is false.
+// Use Number.isNaN(value) to reliably check for NaN.
+
+// undefined
+// Type: undefined
+// Meaning: A variable has been declared but not assigned a value.
+// When it appears:
+// Accessing a variable that hasn't been assigned.
+// A function that doesn't return a value.
+// Accessing a non-existent object property.
+let s;
+console.log(s);           // undefined
+
+function foo() {}
+console.log(foo());       // undefined
+
+let objec = {};
+console.log(objec.key);     // undefined
+
+
+
+
+
 
 // Qu. Why is typeof NaN === "number"?
 // Ans. 
