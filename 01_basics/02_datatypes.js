@@ -1093,6 +1093,16 @@ Gotchas
 // NaN
 typeof NaN
 // JavaScript sees NaN as just another (albeit special) numeric value, and returns:
+"number"
+
+// Why It Feels Confusing
+// It's counterintuitive because "Not-a-Number" sounds like it shouldn’t be a number at all.
+// But think of it more as: “This should be a number, but the operation failed to produce a valid one.”
+let badCalc = "hello" * 3;
+console.log(badCalc);         // NaN
+console.log(typeof badCalc);  // "number"
+
+// Even though the multiplication makes no sense, the result is still of type "number"—just an invalid one.
 
 
 
