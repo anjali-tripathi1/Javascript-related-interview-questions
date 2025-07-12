@@ -1109,7 +1109,48 @@ console.log(typeof badCalc);  // "number"
 
 
 // Qu. What is the difference between Infinity, -Infinity, and NaN?
-// Ans. 
+// Ans. Infinity, -Infinity, and NaN are all special numeric values in JavaScript (and in IEEE 754 floating-point math, which JavaScript uses under the hood).
+
+// Infinity
+// Type: number
+// Represents: A value greater than any other number — positive infinity.
+// Occurs When:
+// A number exceeds the maximum possible value.
+// Dividing a positive number by 0.
+1 / 0          // Infinity
+Number.MAX_VALUE * 2  // Infinity
+
+
+// -Infinity
+// Type: number
+// Represents: A value less than any other number — negative infinity.
+// Occurs When:
+// A very large negative number underflows.
+// Dividing a negative number by 0.
+-1 / 0         // -Infinity
+-Number.MAX_VALUE * 2  // -Infinity
+
+// NaN (Not-a-Number)
+// Type: number
+// Represents: A result that isn’t a valid number, even though it's in the number type family.
+// Occurs When:
+// Math fails: e.g. dividing 0 / 0, parsing non-numeric strings, or invalid math ops.
+0 / 0            // NaN
+parseInt("abc")  // NaN
+Math.sqrt(-1)    // NaN
+
+// Quick Code Demo
+
+console.log(typeof Infinity);      // "number"
+console.log(typeof -Infinity);     // "number"
+console.log(typeof NaN);           // "number"
+
+console.log(Infinity > 1e308);     // true
+console.log(NaN === NaN);          // false
+console.log(Number.isNaN(NaN));    // true
+
+
+
 
 // Qu. What is the isNaN() function and how does it work?
 // Ans. 
