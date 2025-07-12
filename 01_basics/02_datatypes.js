@@ -1076,7 +1076,27 @@ Gotchas
 
 
 // Qu. Why is typeof NaN === "number"?
-// Ans. 
+// Ans. The reason typeof NaN === "number" in JavaScript boils down to how NaN is defined in the language specification.
+
+// Why NaN is a "number"
+// NaN stands for "Not-a-Number", but ironically, it is considered a value of the number type in JavaScript.
+// This is because NaN is part of the IEEE 754 floating-point standard, which JavaScript uses for all its numeric values.
+
+// In other words:
+// NaN is a special numeric value that represents an invalid or unrepresentable number, such as the result of 0 / 0 or Math.sqrt(-1).
+
+// IEEE 754 & JavaScript Numbers
+// JavaScript doesn’t have separate types for integers, floats, or special values like Infinity or NaN. All numeric values are treated as 64-bit floating-point numbers under the IEEE 754 spec. That includes:
+// Regular numbers (42, 3.14)
+// Infinity
+// -Infinity
+// NaN
+typeof NaN
+// JavaScript sees NaN as just another (albeit special) numeric value, and returns:
+
+
+
+
 
 // Qu. What is the difference between Infinity, -Infinity, and NaN?
 // Ans. 
