@@ -1057,6 +1057,19 @@ console.log(foo());       // undefined
 let objec = {};
 console.log(objec.key);     // undefined
 
+// null
+// Type: object (this is a known design flaw in JavaScript)
+// Meaning: Represents the intentional absence of any object value.
+// When to use: When you want to explicitly say "this variable should be empty" or "no value".
+let user1 = null;         // deliberately no value
+
+Gotchas
+// typeof NaN === "number"  (surprisingly!)
+// typeof undefined === "undefined" 
+// typeof null === "object"  (a legacy bug in JavaScript)
+
+
+
 
 
 
