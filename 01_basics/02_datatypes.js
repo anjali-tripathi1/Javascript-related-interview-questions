@@ -1153,7 +1153,32 @@ console.log(Number.isNaN(NaN));    // true
 
 
 // Qu. What is the isNaN() function and how does it work?
-// Ans. 
+// Ans. The isNaN() function is a built-in JavaScript function that determines whether a value is NaN (Not-a-Number). It is often used to check if a value cannot be converted into a valid number.
+
+isNaN(value)
+// value: The value to be tested.
+
+// Returns:
+// true if the value is NaN or cannot be converted into a number.
+// false if the value is a number or can be coerced into a number.
+
+// How it Works:
+// isNaN() tries to convert the value to a number. If the result is NaN, it returns true.
+isNaN("hello")    // true — cannot be converted to a number
+isNaN("123")      // false — can be converted to number 123
+isNaN(123)        // false — it is already a number
+isNaN(NaN)        // true — it is NaN
+isNaN(undefined)  // true — cannot be converted to a number
+
+//  Important Note:
+// The global isNaN() can be misleading because it coerces the value to a number first. For stricter checking, use Number.isNaN() instead.
+
+Number.isNaN("hello")    // false — no coercion, "hello" !== NaN
+Number.isNaN(NaN)        // true
+
+// Use Number.isNaN() when you want to check if a value is truly the special NaN value, without coercion.
+
+
 
 // Qu. What is the difference between Number.isNaN() and isNaN()?
 // Ans. 
