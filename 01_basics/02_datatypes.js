@@ -1205,8 +1205,33 @@ Number.isNaN(NaN)         // true
 
 
 
+
 // Qu. What are BigInt numbers? How do they differ from regular numbers?
-// Ans. 
+// Ans. BigInt is a special numeric data type used in programming (notably in JavaScript and other languages) to represent arbitrarily large integers, beyond the limits of regular number types.
+
+// Differences Between BigInt and Regular Numbers:
+// Feature	           Regular Numbers (Number type)            	BigInt
+// Data Type	       Number (IEEE 754 double-precision)	          BigInt
+// Max Safe Value	    Up to 2^53 - 1 (≈ 9 quadrillion)	   Arbitrary size (limited by memory)
+// Syntax	               Just digits (e.g., 123)	          Add n at the end (e.g., 123n)
+// Decimal Support	     Supports floating-point numbers	    Only supports integers
+// Precision	       Can lose precision with large integers	     Always precise
+// Performance	         Faster for most operations	          Slower, especially with large values
+// Operations        	Works with +, -, *, /, etc.	          Similar, but mixed-type ops throw errors
+
+const regular = 9007199254740991;  // Max safe integer
+const tooBig = 9007199254740993;   // Precision is lost
+console.log(tooBig === 9007199254740992);  // true — precision issue
+
+const bigInt = 9007199254740993n;
+console.log(bigInt + 1n);  // 9007199254740994n — accurate!
+
+// When to Use BigInt:
+// When working with very large integers (e.g., cryptography, precise timestamps).
+// When integer accuracy is crucial and values exceed the safe limit for Number.
+
+// Note: You cannot mix Number and BigInt in most operations directly without explicit conversion.
+
 
 // Qu. How are strings represented in JavaScript?
 // Ans. 
