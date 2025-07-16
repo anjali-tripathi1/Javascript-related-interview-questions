@@ -1181,7 +1181,29 @@ Number.isNaN(NaN)        // true
 
 
 // Qu. What is the difference between Number.isNaN() and isNaN()?
-// Ans. 
+// Ans. The difference between Number.isNaN() and isNaN() in JavaScript lies in how strictly they check for NaN and what kinds of values they accept or convert.
+// isNaN(value)
+// Loosely checks whether a value is NaN after coercing it to a number.
+// It tries to convert the value to a number first, and then checks if the result is NaN
+
+isNaN("hello")     // true  → "hello" becomes NaN
+isNaN(undefined)   // true  → undefined becomes NaN
+isNaN("123")       // false → "123" becomes 123
+isNaN(NaN)         // true
+// Good for loose checking, but may return true for things that aren't actually NaN (like strings or undefined).
+
+// Number.isNaN(value)
+// Strictly checks whether a value is actually the NaN value (without coercion).
+// It does not convert the value to a number.
+
+Number.isNaN("hello")     // false → "hello" is not NaN
+Number.isNaN(undefined)   // false
+Number.isNaN("123")       // false
+Number.isNaN(NaN)         // true
+// Safer and more predictable — it only returns true if the value is exactly NaN.
+// Use Number.isNaN() when you want to reliably check if a value is really NaN.
+
+
 
 // Qu. What are BigInt numbers? How do they differ from regular numbers?
 // Ans. 
