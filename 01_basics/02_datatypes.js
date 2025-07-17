@@ -1281,7 +1281,15 @@ console.log([...emoji]); // Logs individual Unicode characters
 
 
 // Qu. What are template literals?
-// Ans. 
+// Ans. Template literals (also known as template strings) are a feature in JavaScript that allows you to create strings with embedded expressions, multi-line support, and enhanced readability. They were introduced in ES6 (ECMAScript 2015).
+
+// Syntax
+// Template literals are enclosed by backticks (`), instead of single (') or double (") quotes.
+let name1 = "Alice";
+let greeting1 = `Hello, ${name1}!`;
+console.log(greeting1); // "Hello, Alice!"
+
+
 
 // Qu. What is a Symbol? Why would you use one?
 // Ans. 
