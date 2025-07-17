@@ -1292,7 +1292,37 @@ console.log(greeting1); // "Hello, Alice!"
 
 
 // Qu. What is a Symbol? Why would you use one?
-// Ans. 
+// Ans. In JavaScript, a Symbol is a primitive data type introduced in ES6 (2015). It represents a unique and immutable identifier. Symbols are often used to create hidden or unique properties on objects that won't clash with other property keys.
+
+const symbol = Symbol(); // A unique symbol
+const namedSym = Symbol("description"); // Optional description
+
+// Even if two symbols have the same description, they are not equal:
+Symbol("id") === Symbol("id"); // false
+
+//  Why Use a Symbol?
+//  1. Avoid Property Name Collisions
+// When working with objects that might be extended or modified (like in libraries or frameworks), you can use Symbols to create non-conflicting keys:
+
+const ID = Symbol("id");
+
+let user2 = {
+  name: "Alice",
+  [ID]: 1234 // Hidden, unique key
+};
+// No other code can accidentally overwrite or access user[ID] unless it has the same symbol reference.
+
+//  2. Define "Hidden" Object Properties
+// Symbol-keyed properties are not visible during normal iteration:
+for (let key in user) {
+  console.log(key); // "name" only — `ID` is skipped
+}
+
+console.log(Object.keys(user)); // ["name"]
+console.log(Object.getOwnPropertySymbols(user)); // [Symbol(id)]
+
+
+
 
 // Qu. Can you use Symbols as object keys? Why or why not?
 
