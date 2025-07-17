@@ -1234,7 +1234,51 @@ console.log(bigInt + 1n);  // 9007199254740994n — accurate!
 
 
 // Qu. How are strings represented in JavaScript?
-// Ans. 
+// Ans. n JavaScript, strings are represented as immutable sequences of UTF-16 code units.
+
+// Basic Characteristics of JavaScript Strings:
+// Primitive Type:
+// Strings are one of JavaScript’s primitive data types (alongside number, boolean, null, undefined, symbol, and bigint).
+
+// Immutable:
+// Once a string is created, it cannot be changed. Any operation that appears to modify a string actually creates a new string.
+
+// UTF-16 Encoding:
+// Internally, strings are sequences of 16-bit code units using UTF-16 encoding:
+
+// Most common characters (e.g. ASCII) are stored in a single 16-bit unit.
+
+// Characters outside the Basic Multilingual Plane (e.g., many emojis or some Chinese characters) are represented by a pair of 16-bit code units, known as a surrogate pair.
+
+let star = "Hello 👋";
+console.log(star.length); // 7 — because "👋" is a surrogate pair (2 units)
+
+// Even though "👋" appears as one character, .length counts UTF-16 code units, so it counts as 2.
+
+// Working with Strings:
+// JavaScript provides a rich set of string methods:
+// .length — gets the number of UTF-16 code units
+// .charAt(index) — gets the UTF-16 code unit at a given index
+// .slice(), .substring(), .substr() — extract substrings
+// .replace(), .split(), .toUpperCase() — manipulate string content
+
+// Unicode Awareness:
+// For working accurately with characters (especially emojis or non-Latin scripts), you might need modern Unicode-aware methods:
+// Array.from(string)
+// String.prototype.codePointAt()
+// for...of loop over the string
+// String.fromCodePoint()
+
+let emoji = "👨‍👩‍👧‍👦"; // Family emoji (uses zero-width joiners)
+console.log([...emoji]); // Logs individual Unicode characters
+
+
+
+
+
+
+
+
 
 // Qu. What are template literals?
 // Ans. 
