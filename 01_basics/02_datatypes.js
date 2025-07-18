@@ -1399,6 +1399,9 @@ const arrays = [1, 2];
 arrays.name = "Numbers";
 console.log(arrays.name); // "Numbers"
 
+// But this is not standard usage and should be avoided.
+
+
 
 
 
