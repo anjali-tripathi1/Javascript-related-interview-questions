@@ -1395,6 +1395,12 @@ console.log(Object.keys(persons)); // ['name', 'age']
 // Under the Hood
 // Arrays are a special kind of object where keys are numeric indices and values are stored in order.
 // You can technically add properties to an array like an object:
+const arrays = [1, 2];
+arrays.name = "Numbers";
+console.log(arrays.name); // "Numbers"
+
+
+
 
 // Qu. How can you clone an object in JavaScript? 
 //                          
