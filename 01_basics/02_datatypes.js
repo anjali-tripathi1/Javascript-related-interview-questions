@@ -1325,6 +1325,45 @@ console.log(Object.getOwnPropertySymbols(user)); // [Symbol(id)]
 
 
 // Qu. Can you use Symbols as object keys? Why or why not?
+// Ans. Yes, you can use Symbols as object keys in JavaScript.
+
+// Why?
+// JavaScript object keys can be:
+// Strings
+// Symbols
+// A Symbol is a primitive data type introduced in ES6 that represents a unique identifier. Because each Symbol is unique, even if two symbols have the same description, they are not equal:
+
+Symbol('id') === Symbol('id'); // false
+
+// Why use Symbols as keys?
+// Uniqueness: Prevents property name collisions.
+// Non-enumerability: Symbol keys are not included in:
+// for...in
+// Object.keys()
+// JSON.stringify()
+// This helps define "hidden" properties on objects.
+// Safe for extensions: Useful in libraries or APIs where you want to add metadata or internal properties without affecting the user’s object.
+
+const sym3 = Symbol('secret');
+
+const user3 = {
+  name: 'Alice',
+  [sym]: 'hidden value'
+};
+
+console.log(user3.name);        // 'Alice'
+console.log(user3[sym3]);        // 'hidden value'
+console.log(Object.keys(user3)); // ['name']
+
+// Why not always use them?
+// Not enumerable by default (you have to use Object.getOwnPropertySymbols()).
+// Not serializable via JSON.stringify().
+// Can make debugging harder if overused.
+
+// You can use Symbols as object keys because they’re a supported primitive type that allows for unique, non-colliding, optionally hidden property keys—useful for advanced or internal object design.
+
+
+
 
 // Qu. How are arrays different from objects in JavaScript?
 
