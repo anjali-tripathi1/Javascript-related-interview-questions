@@ -1366,8 +1366,38 @@ console.log(Object.keys(user3)); // ['name']
 
 
 // Qu. How are arrays different from objects in JavaScript?
+// Ans. Arrays and objects in JavaScript are both reference types, but they serve different purposes and have distinct characteristics.
 
-// Qu. How can you clone an object in JavaScript?
+// Key Differences Between Arrays and Objects
+// Feature	                        Arrays	                            Objects
+// Purpose	          Store ordered collections of data	             Store key-value pairs (unordered)
+// Key Type	           Indexed by numbers (0, 1, 2, …)        	     Indexed by strings or Symbols
+// Built-in Methods	 Has many (e.g., .push(), .map(), .filter())	  Fewer by default (e.g., Object.keys(), 
+                                                                                  //  Object.values())
+
+// Length property	   Has .length to track number of elements	     No .length property by default
+// Iteration	      Best used with loops like for, forEach, map	     Iterated with for...in, Object.entries
+                                                                          // (), etc
+
+// Use case                Lists, sequences, stacks, queues           Dictionaries, configurations, 
+//                                                                         objects with named properties
+
+// Array:
+const fruit = ['apple', 'banana', 'cherry'];
+console.log(fruit[1]);     // 'banana'
+console.log(fruit.length); // 3
+
+// Object:
+const persons = { name: 'Alice', age: 30 };
+console.log(persons.name);   // 'Alice'
+console.log(Object.keys(persons)); // ['name', 'age']
+
+// Under the Hood
+// Arrays are a special kind of object where keys are numeric indices and values are stored in order.
+// You can technically add properties to an array like an object:
+
+// Qu. How can you clone an object in JavaScript? 
+//                          
 
 // Qu. How do you check if a value is an object?
 
