@@ -1466,6 +1466,36 @@ function isPlainObject(value) {
 
 
 // Qu. What is the difference between a Map and an Object?
+// Ans. The difference between a Map and an Object in JavaScript lies in how they store data, what types of keys they accept, their performance characteristics, and intended use cases.
+// 1. Key Types
+// Feature	                          Object	                             Map
+// Key Types	                   Strings and Symbols      	Any type (objects, functions, etc.)
+
+const object1 = {};
+object1[42] = 'value';         // 42 is converted to "42"
+
+const map1 = new Map();
+map1.set(42, 'value');      // 42 stays as a number
+
+// 2. Ordering of Keys
+// Feature	Object	Map
+// Key Order	Unordered (mostly)	Ordered (insertion order)
+const map2 = new Map();
+map2.set('a', 1);
+map2.set('b', 2);
+console.log([...map2]); // [['a', 1], ['b', 2]]
+
+// 3. Performance
+// Operation	                       Object	                      Map
+// Frequent Add/Delete	             Slower	                    Faster
+// Large Data Sets	Less optimized	Optimized
+// Maps are generally faster for frequent additions/removals.
+
+
+// 4. Iteration
+// Feature	Object	Map
+// Iteration Support	Not iterable directly	Iterable with for...of, spread
+// Methods	Object.keys() etc.	.entries(), .forEach(), etc.
 
 // Qu. What is the difference between a Set and an Array?
 
