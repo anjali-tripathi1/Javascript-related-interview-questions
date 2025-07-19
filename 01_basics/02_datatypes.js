@@ -1406,7 +1406,40 @@ console.log(arrays.name); // "Numbers"
 
 
 // Qu. How can you clone an object in JavaScript? 
-//                          
+//  Ans. In JavaScript, cloning an object can be done in several ways depending on whether you want a shallow copy or a deep copy:
+
+// 1. Shallow Clone (one level deep)
+// A shallow copy only copies the top-level properties. Nested objects or arrays will still reference the same memory.
+
+// Option A: Using Object.assign()
+const originalval = { a: 1, b: 2 };
+const clone = Object.assign({}, originalval);
+
+//  Option B: Using Spread Syntax { ... }
+const originalval1 = { a: 1, b: 2 };
+const clone1 = { ...originalval1 };
+
+// 2. Deep Clone (including nested objects/arrays)
+// A deep copy means all levels of the object are cloned, not just the first.
+//  Option A: JSON Methods (simple but limited)
+const originalval2 = { a: 1, b: { c: 2 } };
+const clone2 = JSON.parse(JSON.stringify(originalval2));
+// Limitations:
+// Cannot clone functions, undefined, Date, Map, Set, circular references, etc.
+
+//  Option B: Using structuredClone() (modern & robust)
+const originalval3 = { a: 1, b: { c: 2 } };
+const clone3 = structuredClone(originalval3);
+// Available in modern browsers and Node.js 17+
+// Supports most types including Date, Map, Set, and handles circular references.
+
+// Option C: Using a library like Lodash
+import cloneDeep from 'lodash/cloneDeep';
+
+const originalval4 = { a: 1, b: { c: 2 } };
+const clone4 = cloneDeep(originalval4);
+
+
 
 // Qu. How do you check if a value is an object?
 
