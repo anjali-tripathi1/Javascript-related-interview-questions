@@ -1488,14 +1488,14 @@ console.log([...map2]); // [['a', 1], ['b', 2]]
 // 3. Performance
 // Operation	                       Object	                      Map
 // Frequent Add/Delete	             Slower	                    Faster
-// Large Data Sets	Less optimized	Optimized
+// Large Data Sets	              Less optimized	             Optimized
 // Maps are generally faster for frequent additions/removals.
 
 
 // 4. Iteration
-// Feature	Object	Map
-// Iteration Support	Not iterable directly	Iterable with for...of, spread
-// Methods	Object.keys() etc.	.entries(), .forEach(), etc.
+// Feature	                       Object                        	Map
+// Iteration Support	     Not iterable directly	    Iterable with for...of, spread
+// Methods	                  Object.keys() etc.	      .entries(), .forEach(), etc.
 
 // Qu. What is the difference between a Set and an Array?
 
