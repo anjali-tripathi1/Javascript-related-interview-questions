@@ -1496,6 +1496,27 @@ console.log([...map2]); // [['a', 1], ['b', 2]]
 // Feature	                       Object                        	Map
 // Iteration Support	     Not iterable directly	    Iterable with for...of, spread
 // Methods	                  Object.keys() etc.	      .entries(), .forEach(), etc.
+const map = new Map([['a', 1]]);
+for (const [key, value] of map) {
+  console.log(key, value);
+}
+
+
+// 5. Prototype Inheritance
+// Feature	Object	Map
+// Inherits from	Object.prototype	None (pure data)
+// This means objects can accidentally inherit unwanted properties (like toString), unless you create them with Object.create(null).
+// Object
+const object2 = { name: "Alice" };
+object2["age"] = 30;
+
+// Map
+const map3 = new Map();
+map3.set("name", "Alice");
+map3.set("age", 30);
+map3.set({ key: "obj" }, "value"); // Allowed in Map
+
+
 
 // Qu. What is the difference between a Set and an Array?
 
