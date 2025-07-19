@@ -1441,7 +1441,29 @@ const clone4 = cloneDeep(originalval4);
 
 
 
+
 // Qu. How do you check if a value is an object?
+// Ans. To check if a value is an object (and not something like null or an array), you need to be careful, because:
+
+// typeof null === 'object'  but it's not a usable object'
+// Arrays are technically objects too: typeof [] === 'object'
+
+//  Best way to check if a value is a plain object:
+function isPlainObject(value) {
+  return (
+    typeof value === 'object' &&
+    value !== null &&
+    !Array.isArray(value)
+  );
+}
+
+// This checks:
+// typeof value === 'object' → must be object-like
+// value !== null → filters out null
+// !Array.isArray(value) → filters out arrays
+
+
+
 
 // Qu. What is the difference between a Map and an Object?
 
