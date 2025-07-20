@@ -1608,6 +1608,22 @@ console.log(cat.type); // 'animal' (own property)
 
 
 // Qu. What are WeakMap and WeakSet?
+// Ans. WeakMap and WeakSet are special types of collections in JavaScript that allow for "weakly held" references to objects. This has big implications for memory management and garbage collection.
+// WeakMap
+//  Purpose:
+// A WeakMap is like a regular Map, but:
+// Keys must be objects (not primitives)
+// Keys are weakly referenced—if there’s no other reference to the key object, it can be garbage collected
+
+const wm = new WeakMap();
+
+let object4 = {};
+wm.set(object4, "some value");
+
+console.log(wm.get(obj)); // "some value"
+
+obj = null; // Now the object can be garbage collected
+
 
 // Qu. When would you use a WeakMap or WeakSet over Map/Set?
 
