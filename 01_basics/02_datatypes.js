@@ -1553,6 +1553,59 @@ console.log(mySet); // Output: Set {1, 2, 3}
 
 
 // Qu. What is the difference between Object.create() and a constructor function?
+// Ans. Both Object.create() and constructor functions are used in JavaScript to create objects, but they do it in different ways and have different use cases.
+
+// Object.create()
+//  Purpose:
+// Creates a new object and sets the specified object as its prototype.
+const proto = {
+  greet() {
+    console.log("Hello!");
+  }
+};
+
+const object3 = Object.create(proto);
+object3.greet(); // Output: "Hello!"
+// Key Features:
+// You manually define the prototype.
+// Returns a plain object.
+// No this, no constructor logic.
+// Great for simple inheritance or prototype delegation.
+
+// Constructor Function
+//  Purpose:
+// Defines a template for creating multiple objects using the new keyword.
+function Person(name) {
+  this.name = name;
+}
+Person.prototype.greet = function () {
+  console.log(`Hello, I'm ${this.name}`);
+};
+
+const person1 = new Person("Alice");
+person1.greet(); // Output: "Hello, I'm Alice"
+
+// Key Features:
+// Used with the new keyword.
+// Automatically sets the prototype.
+// this refers to the new instance.
+// Better for object blueprints and instantiation.
+
+// Using Object.create
+const animal = { type: 'animal' };
+const dogs = Object.create(animal);
+console.log(dogs.type); // 'animal' (inherited)
+
+// Using constructor function
+function Animal() {
+  this.type = 'animal';
+}
+const cat = new Animal();
+console.log(cat.type); // 'animal' (own property)
+
+
+
+
 
 // Qu. What are WeakMap and WeakSet?
 
