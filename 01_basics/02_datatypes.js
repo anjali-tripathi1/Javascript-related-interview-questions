@@ -1623,6 +1623,40 @@ wm.set(object4, "some value");
 console.log(wm.get(obj)); // "some value"
 
 obj = null; // Now the object can be garbage collected
+// Key Features:
+// Only objects as keys
+// Values can be any type
+// No way to iterate, clear, or check size
+// Useful for private data storage (e.g., in class instances)
+
+// WeakSet
+//  Purpose:
+// A WeakSet is like a Set, but:
+// Only holds objects (no primitives)
+// Objects are held weakly
+const ws = new WeakSet();
+
+let user4 = { name: "Alice" };
+ws.add(user4);
+
+console.log(ws.has(user)); // true
+
+user = null; // The object can be garbage collected
+
+// Key Features:
+// Only objects allowed
+// Automatically removes objects once they're no longer referenced
+// No iteration, size, or clear method
+
+// Why Use Them?
+// Helps avoid memory leaks
+// Good for caching, private data, or tracking object lifetimes
+// Because of weak references, they allow JavaScript’s garbage collector to clean up when objects are no longer needed—even if they're still inside a WeakMap or WeakSet
+
+
+
+
+
 
 
 // Qu. When would you use a WeakMap or WeakSet over Map/Set?
