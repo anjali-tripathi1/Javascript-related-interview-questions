@@ -1519,6 +1519,38 @@ map3.set({ key: "obj" }, "value"); // Allowed in Map
 
 
 // Qu. What is the difference between a Set and an Array?
+// Ans. The key difference between a Set and an Array lies in how they store data and what operations they optimize for. 
+// Array
+// An Array is an ordered collection of elements, where:
+// Duplicates are allowed
+// Elements are accessed via indices (0-based)
+let array2 = [1, 2, 3, 2];
+console.log(array2[1]); // Output: 2
+// Key Characteristics:
+// Maintains insertion order
+// Can contain duplicate values
+// Allows indexed access (e.g., arr[0])
+// Useful for tasks where order matters or you need position-based access
+
+// Set
+// A Set is an unordered collection of unique values.
+// Example (in JavaScript):
+let mySet = new Set([1, 2, 3, 2]);
+console.log(mySet); // Output: Set {1, 2, 3}
+
+// Key Characteristics:
+// No duplicates allowed (automatically filters them out)
+// Does not maintain order (in some languages, like Python’s set)
+// No index-based access (you can't do mySet[0])
+// Ideal for checking existence (has(value)) or ensuring uniqueness
+
+
+
+
+
+
+
+
 
 // Qu. What is the difference between Object.create() and a constructor function?
 
