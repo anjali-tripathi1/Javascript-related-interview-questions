@@ -1747,6 +1747,11 @@ function getLayout(el) {
   return elementData.get(el);
 }
 
+// Why this matters
+// With regular Map, keys are strongly held: even if an object has no other references, it won’t be GC’d as long as it’s a key in the map.
+// WeakMap lets you avoid memory leaks in scenarios where you associate temporary data with objects (like DOM nodes or class instances).
+
+
 
 
 
