@@ -1660,6 +1660,59 @@ user = null; // The object can be garbage collected
 
 
 // Qu. When would you use a WeakMap or WeakSet over Map/Set?
+// Ans. You'd use a WeakMap or WeakSet over a regular Map or Set in specific cases where memory management and object references are critical, particularly for:
+
+//  When to use WeakMap or WeakSet:
+// 1. When you want to associate data with objects without preventing garbage collection
+// WeakMap lets you attach metadata to an object without keeping it alive in memory.
+// Once there are no more references to the object elsewhere, it will be garbage collected, even if it's a key in the WeakMap.
+let object5 = {};
+let wm1 = new WeakMap();
+
+wm1.set(object5, 'some metadata');
+
+object5 = null; // Now both obj and its metadata in wm can be garbage collected
+
+// In contrast, Map would keep obj and its value alive as long as the map exists.
+
+// 2. For internal/private data in classes or libraries
+// WeakMap is often used to store private data that you don’t want accessible from outside the class.
+const privateData = new WeakMap();
+
+class Person {
+  constructor(name) {
+    privateData.set(this, { name });
+  }
+
+  getName() {
+    return privateData.get(this).name;
+  }
+}
+// No one outside can access privateData, and the data is cleaned up when the Person instance is.
+
+// 3. When tracking object existence without preventing garbage collection (WeakSet)
+// WeakSet only stores object references, and those objects can still be garbage collected.
+// Useful for marking or tracking objects, like caching or tracking visited nodes.
+
+let visited = new WeakSet();
+
+function traverse(node) {
+  if (visited.has(node)) return;
+  visited.add(node);
+  // ... do something
+}
+
+//  When not to use WeakMap or WeakSet:
+// You need to iterate over the keys/values (they are not iterable).
+// You want to know how many items are in the structure (no .size property).
+// You’re using primitive keys or values (they only work with objects).
+// You want to store data persistently; they’re for ephemeral use only.
+
+
+
+
+
+
 
 // Qu. How does JavaScript garbage collection relate to WeakMaps?
 
