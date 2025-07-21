@@ -1715,6 +1715,12 @@ function traverse(node) {
 
 
 // Qu. How does JavaScript garbage collection relate to WeakMaps?
+// Ans. JavaScript's garbage collection (GC) and WeakMap are tightly connected—WeakMap is designed to allow objects to be garbage collected even if they’re used as keys. Here's how it works and why it matters:
+
+// What is JavaScript Garbage Collection (GC)?
+// GC is the process by which JavaScript automatically frees memory that’s no longer in use. An object becomes "garbage" (eligible for collection) when nothing references it anymore.
+
+
 
 // Qu. What are typed arrays in JavaScript?
 
