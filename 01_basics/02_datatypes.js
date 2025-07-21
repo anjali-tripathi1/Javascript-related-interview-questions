@@ -1729,6 +1729,26 @@ function traverse(node) {
 //  When an object key becomes unreachable:
 // If there are no other references to the object key outside the WeakMap, that object and its associated value in the WeakMap are automatically removed during garbage collection.
 
+// You can’t observe this cleanup directly, because:
+// WeakMap is not iterable.
+// You can’t check its size.
+// There's no notification when GC happens.
+
+// Practical Use: Memory-Efficient Object Metadata
+// Imagine a DOM manipulation library that stores layout info for elements:
+
+let elementData = new WeakMap();
+
+function setLayout(el, layout) {
+  elementData.set(el, layout);
+}
+
+function getLayout(el) {
+  return elementData.get(el);
+}
+
+
+
 
 // Qu. What are typed arrays in JavaScript?
 
