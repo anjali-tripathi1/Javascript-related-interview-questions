@@ -1756,10 +1756,109 @@ function getLayout(el) {
 
 
 // Qu. What are typed arrays in JavaScript?
+// Ans. Typed arrays in JavaScript are array-like objects that provide a mechanism to read and write raw binary data in memory buffers. They are used when you're working with binary data—like from files, WebSockets, or WebGL.
+// Key Concepts:
+// ArrayBuffer:
+// A fixed-length binary data buffer.
+// Represents a generic, fixed-length raw binary data buffer.
+// Doesn't have a method to access data directly—you use views like typed arrays to read/write.
+
+// Typed Array Views:
+// Views over an ArrayBuffer that allow you to interpret the buffer data as various numeric types.
+// Examples: Int8Array, Uint8Array, Float32Array, Uint16Array, etc.
+
+// Create a buffer of 8 bytes
+let buffer = new ArrayBuffer(8);
+
+// Create a 32-bit integer view into the buffer
+let int32View = new Int32Array(buffer);
+
+// Assign values
+int32View[0] = 42;
+int32View[1] = 100;
+
+console.log(int32View); // Int32Array(2) [42, 100]
+
+// Why Use Typed Arrays?
+// Better performance with binary data.
+// Required for interacting with certain APIs (like WebGL).
+// Fine-grained control over memory layout.
+
+// Important Notes:
+// Typed arrays have fixed length once created.
+// Each type has a specific byte size per element.
+// Endianness may matter when interpreting bytes.
+
+
+
+
+
 
 // Qu. What is the type of a function in JavaScript?
+// Ans. In JavaScript, the type of a function is "function".
+// You can check this using the typeof operator:
+function greet() {
+  console.log("Hello!");
+}
+
+console.log(typeof greet); // "function"
+
+// Breakdown:
+// Functions are first-class objects in JavaScript.
+// While typeof returns "function", under the hood, functions are objects with special callable behavior.
+// Functions can have properties, be passed as arguments, returned from other functions, and stored in variables.
+
+console.log(typeof function(){}); // "function"
+console.log(typeof (() => {}));   // "function"
+console.log(typeof class A {});   // "function" (yes, classes are functions too)
+
+// Although typeof returns "function", the internal class is:
+
+Object.prototype.toString.call(greet); // "[object Function]"
+
+
 
 // Qu. Can functions be assigned to variables? Why?
+// Ans. Yes, functions can absolutely be assigned to variables in JavaScript—and this is a core feature of the language.
+
+// Why?
+// Because functions are first-class objects in JavaScript. This means:
+// They can be assigned to variables
+// Passed as arguments to other functions
+// Returned from other functions
+// Stored in arrays, objects, etc.
+
+// Example: Assigning a Function to a Variable
+
+const sayHello = function() {
+  console.log("Hello!");
+};
+
+sayHello(); // "Hello!"
+
+// Or using an arrow function:
+
+const add = (a, b) => a + b;
+
+console.log(add(2, 3)); // 5
+
+// Why This Matters
+// Assigning functions to variables makes functional programming patterns possible, such as:
+// Callbacks (e.g. in setTimeout, event listeners)
+// Higher-order functions (functions that take or return functions)
+// Composition of behaviors dynamically
+
+// Summary
+// Yes, functions can be assigned to variables because JavaScript treats them as first-class objects. This gives the language a great deal of flexibility and expressiveness.
+
+
+
+
+
+
+
+
+
 
 // Qu. What is the difference between function declarations and function expressions?
 
