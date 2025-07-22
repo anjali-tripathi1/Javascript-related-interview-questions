@@ -1934,6 +1934,25 @@ greet("Alice", sayGoodbye);
 
 
 // Qu. How do closures affect the data types captured inside?
+// Ans. Closures in JavaScript don’t change the data types of the variables they capture—but they preserve access to those variables and their current values even after the outer function has finished executing.
+
+// What Is a Closure?
+// A closure is a function that "remembers" the environment (scope) in which it was created.
+function outer() {
+  let count = 0; // primitive type
+
+  return function inner() {
+    count++;
+    console.log(count);
+  };
+}
+
+const counter = outer();
+counter(); // 1
+counter(); // 2
+
+// Here, inner() closes over count. It remembers count even though outer() has finished.
+
 
 
 // Advanced Level
