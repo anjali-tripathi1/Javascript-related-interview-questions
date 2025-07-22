@@ -1953,6 +1953,13 @@ counter(); // 2
 
 // Here, inner() closes over count. It remembers count even though outer() has finished.
 
+// How Are Data Types Affected?
+// Type                                                     	Behavior in Closure
+// Primitives (number, string, boolean, etc.)	            Captured by value; latest value is used
+// Objects (object, array, function)	                  Captured by reference; changes affect the closure
+
+
+
 
 
 // Advanced Level
