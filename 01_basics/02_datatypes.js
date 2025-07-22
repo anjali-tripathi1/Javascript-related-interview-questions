@@ -1958,7 +1958,18 @@ counter(); // 2
 // Primitives (number, string, boolean, etc.)	            Captured by value; latest value is used
 // Objects (object, array, function)	                  Captured by reference; changes affect the closure
 
+function createLogger() {
+  let message = "Hello";
 
+  return function log() {
+    console.log(message); // Uses current value
+  };
+}
+
+const logger = createLogger();
+logger(); // "Hello"
+
+// Even if message is a primitive, the closure remembers it.
 
 
 
