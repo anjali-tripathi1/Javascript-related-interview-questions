@@ -1861,6 +1861,49 @@ console.log(add(2, 3)); // 5
 
 
 // Qu. What is the difference between function declarations and function expressions?
+// Ans. The key difference between function declarations and function expressions in JavaScript lies in how they're defined, when they’re hoisted, and how they behave in code execution.
+
+// 1. Function Declaration
+// A function declaration defines a named function using the function keyword at the top level of a script or block.
+function greet() {
+  console.log("Hello!");
+}
+
+// Hoisted: You can call it before it's defined in the code.
+
+greet(); //  Works!
+
+function greet() {
+  console.log("Hello!");
+}
+
+// 2. Function Expression
+// A function expression defines a function as part of an expression, usually assigned to a variable.
+const greet = function() {
+  console.log("Hello!");
+};
+
+// Not hoisted (in usable form): You can't call it before the assignment.
+
+greet(); //  TypeError: greet is not a function
+
+const greet = function() {
+  console.log("Hello!");
+};
+
+// Named vs Anonymous Function Expressions
+// You can name the function in an expression (named function expression), or leave it anonymous:
+
+// Anonymous
+const sayHi = function() {};
+
+// Named
+const sayBye = function bye() {};
+// The name bye is only accessible inside the function body (useful for recursion or debugging stack traces).
+
+
+
+
 
 // Qu. What is a callback function?
 
