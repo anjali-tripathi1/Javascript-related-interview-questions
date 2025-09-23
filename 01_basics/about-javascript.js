@@ -451,3 +451,112 @@ function sum() {
 
 console.log(sum(1, 2, 3)); // Output: 6
 console.log(sum(10));      // Output: 10
+
+//  closure
+// A function that can access variables from its parent scope.
+
+function outer() {
+  let count = 0;
+
+  function inner() {
+    count++;
+    console.log(count);
+  }
+
+  return inner;
+}
+
+const counter = outer();  // `outer` returns `inner`, which remembers `count`
+
+counter();  // 1
+counter();  // 2    
+counter();  // 3
+
+
+//  function invocation
+// call, apply, bind
+
+// it is used for invoking a function
+// func.call(thisArg, arg1, arg2, ...);
+
+
+
+function calls () {
+    console.log('Hello ' + this.name)
+}
+
+const person = {
+    name : 'Anjali',
+    age: 20
+}
+
+calls.call(person)
+
+
+function introduce(city, country) {
+  console.log(`Hi, I'm ${this.name} from ${city}, ${country}.`);
+}
+
+const user = {
+  name: "Rahul"
+};
+
+introduce.call(user, "Mumbai", "India");  
+
+
+
+// apply
+// apply() is a method that invokes a function while explicitly setting the this context, just like .call() but it passes arguments as an array.
+// functionName.apply(thisArg, [arg1, arg2, ...]);
+
+
+function greet(city, country) {
+  console.log(`Hi, I'm ${this.name} from ${city}, ${country}.`);
+}
+
+const persons = {
+  name: "Anjali"
+};
+
+greet.apply(persons, ["Delhi", "India"]);  
+
+
+
+const numbers = [4, 10, 7, 2];
+
+const max = Math.max.apply(null, numbers);
+console.log(max);  // Output: 10
+
+
+// bind
+// bind() creates a new function with the this keyword permanently set to the value you provide — but it does not invoke the function immediately (unlike .call() and .apply()).
+
+// const boundFunction = originalFunction.bind(thisArg, arg1, arg2, ...);
+// boundFunction();
+
+
+
+ function person1 (city, country) {
+       console.log(`${this.firstName} ${this.lastName} from ${city}, ${country}`);
+        
+  }
+
+
+const person2 = {
+  firstName: "Anjali",
+  lastName: "Sharma"
+};
+
+const person3 = {
+  firstName: "Rahul",
+  lastName: "Verma"
+};
+
+// Bind person1.fullName to person2
+ person1.bind(person2, "Delhi", "India");
+
+// Bind person1.fullName to person
+ person1.bind(person3, "Mumbai", "India");
+
+// console.log(anjaliDetails());  // Output: Anjali Sharma from Delhi, India
+// console.log(rahulDetails());   // Output: Rahul Verma from Mumbai, India
