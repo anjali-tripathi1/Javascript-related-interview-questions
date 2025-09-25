@@ -254,7 +254,37 @@ false || true     // returns true
 
 
 
+//   Diffrence between mutable and immutable
 
+// Mutable
+// Definition: An object is mutable if you can change its content after it is created.
+// You can update, add, or delete elements in the object.
+// Arrays / Lists
+// Dictionaries / Objects / Maps
+// Sets
+
+
+let arr = [1, 2, 3];
+arr[0] = 99;  // Modifying the original array
+console.log(arr);  // Output: [99, 2, 3]
+
+
+// Immutable
+// Definition: An object is immutable if you cannot change its content after it is created.
+// To make changes, you must create a new object.
+
+// Strings
+// Numbers
+// Booleans
+// Tuples (in Python)
+// In JavaScript: const doesn’t make an object immutable — it just makes the reference unchangeable.
+
+let str = "hello";
+str[0] = "H";  // This does nothing
+console.log(str);  // Output: "hello"
+
+let newStr = str.replace("h", "H");
+console.log(newStr);  // Output: "Hello"
 
 
 
