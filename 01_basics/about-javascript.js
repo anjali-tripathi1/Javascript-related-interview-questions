@@ -590,3 +590,82 @@ const person3 = {
 
 // console.log(anjaliDetails());  // Output: Anjali Sharma from Delhi, India
 // console.log(rahulDetails());   // Output: Rahul Verma from Mumbai, India
+
+// Math operations
+
+//  Rest parameter and spread parameter
+// Rest parameter -- collect all remaining elements or properties into a single array (in function parameters or array destructuring) or object (in object destructuring).
+function sum(...numbers) {
+  return numbers.reduce((acc, n) => acc + n, 0);
+}
+
+console.log(sum(1, 2, 3, 4)); // 10
+
+const [first, ...rest] = [1, 2, 3, 4];
+console.log(first); // 1
+console.log(rest);  // [2, 3, 4]
+
+const user1 = { name1: "Alice", age: 25, city: "NY" };
+const { name1, ...details } = user1;
+
+console.log(name1);    // Alice
+console.log(details); // { age: 25, city: "NY" }
+
+
+
+//  Spread operator -- unpack or spread elements of an iterable (like an array, string, or object) into individual elements.
+const number = [1, 2, 3];
+console.log(...number); // Output: 1 2 3
+
+const users = { name: "Alice", age: 25 };
+const clone = { ...users };
+
+console.log(clone); // { name: "Alice", age: 25 }
+
+// arrow function
+
+// function declartion, function expression
+
+// asynchronous code
+
+// promise, async await
+
+//  iife / Self invoking function
+
+//  events  
+//  click, onclick, dblclick, mouseover, mouseenter, mouseout, change, submit
+
+// Dom
+// form validation
+
+// promise, async await, 
+
+// cookies, localStorage, sessionStorage
+
+// typescript
+// two types of typescript -- explicit type, inference type
+// explicit type - an explicit type means you define the type of a variable, function, parameter, or return value yourself, instead of letting TypeScript infer it automatically.
+// Advantages:
+// Makes code more readable and predictable
+// Helps catch bugs early
+// Useful in function parameters and API design
+
+// let username: string = "Alice";
+// let age: number = 30;
+// let isAdmin: boolean = false;
+
+
+
+// inference type -- Type Inference is when TypeScript automatically determines the type of a variable or expression without you explicitly writing it.
+
+// readonly keyword -- The readonly keyword in TypeScript is used to make a property immutable, meaning it cannot be changed after initialization. (we can't update array or any specific object after its declartion.)
+
+// type declare inside function object and array
+
+// oops 
+
+// typescript object
+//  class (blueprint)
+// using constructor (private, public)
+
+// Encapsulation
