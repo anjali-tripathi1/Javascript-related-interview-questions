@@ -642,7 +642,60 @@ console.log(clone); // { name: "Alice", age: 25 }
 
 // cookies, localStorage, sessionStorage
 
-// typescript
+// typescript -- Typescript is a free and open source programing language. it is a superset of js means any valid js code is also a valid ts code. in ts we need to define the type.
+
+// Advantages of ts 
+// 1. Type safety reduces runtime errors.
+// 2. Static typing enables early bug detection.
+// 3. Improves code readability with self-documenting types.
+// 4. Supports OOP features like classes, interfaces, and inheritance.
+// 5. Supports modern JavaScript features with backward compatibility.
+
+// Disadvantages of ts
+//  Additional setup and configuration required.
+//  Slower development initially due to type annotations.
+//  Compilation step needed to run TypeScript code.
+//  May overcomplicate small projects.
+//  Build process becomes more complex.
+
+// How is TypeScript different from JavaScript?
+// TypeScript adds types, interfaces, and compile-time checks, while JavaScript is dynamically typed and interpreted at runtime.
+
+// What is an interface in TypeScript?
+// An interface defines the structure of an object (like a contract).
+
+// interface Person {
+//   name: string;
+//   age: number;
+// }
+// let user: Person = { name: "Alice", age: 25 };
+
+// what are datatypes
+// String, number, boolean , null , object, void, undefined, any, unknown, never, 
+// array	A list of values of the same type	let nums: number[] = [1, 2, 3];
+// tuple	Fixed-length array with known types	let point: [number, number] = [1, 2];
+// union	 Accept multiple types	`let id: number
+// intersection	 Combine multiple types into one	 type A = {x: number} & {y: number}
+// enum          Defines a set of named constants  enum Color { Red, Green, Blue }
+
+
+
+// What is the difference between any, unknown, and never?
+// any	       accept any type(disables type checking0 (avoid using often)
+// unknown	   Safer alternative to any, must check type
+// never	     For values that never occur (e.g., errors)
+
+// What is a union type?
+// A variable can hold more than one possible type.
+ // let value: string | number;
+// value = "Hello";
+// value = 123;
+
+
+// npm install -g typescript       # Install
+// tsc file.ts                     # Compile TypeScript to JavaScript
+
+
 // two types of typescript -- explicit type, inference type
 // explicit type - an explicit type means you define the type of a variable, function, parameter, or return value yourself, instead of letting TypeScript infer it automatically.
 // Advantages:
@@ -663,9 +716,50 @@ console.log(clone); // { name: "Alice", age: 25 }
 // type declare inside function object and array
 
 // oops 
+// oops -- OOPs stands for Object-Oriented Programming System. It is a programming paradigm based on the concept of "objects", which can contain data and methods that operate on that data.
+// Core Concepts of OOPs:
+
+// Class – A blueprint for creating objects (e.g., Car, Person).
+// Object – An instance of a class with specific values.
+// Encapsulation – Hiding internal data and showing only what’s necessary.
+// Abstraction – Showing only essential features and hiding complexities.
+// Inheritance – One class can inherit properties and behaviors from another.
+// Polymorphism – Objects can take many forms (e.g., method overloading/overriding).
+
+
+  
+             // in class , in subclass, in outsideclass
+// private       // yes        no          no
+// public,       // yes        yes         yes
+// protected     // yes        yes         no
+
+// option chaining operator 
+// the ?. syntax is known as the Optional Chaining Operator, and it's used for optional error handling when you're accessing properties or calling functions on potentially null or undefined values.
 
 // typescript object
 //  class (blueprint)
 // using constructor (private, public)
 
-// Encapsulation
+// Encapsulation -- bundals the data and methods into single unit(class).
+// 1. prevents the unauthorized user to enter in the internal data.
+// 2. enforces controlled interactions through getters and setters.
+// 3. promots the data intregity and security.
+
+
+// Encapsulation is the bundling of data (properties) and methods that operate on that data into a single unit (class),
+// Yes, using private, public, and protected is important in encapsulation in TypeScript (and in object-oriented programming in general). These access modifiers help control how the internal state of a class is accessed and modified, which is the core idea of encapsulation.
+
+// extend
+// The extends keyword in TypeScript is used to create a subclass from a parent (superclass). It allows a class to inherit properties and methods from another class.
+
+
+// class interface
+// A class is a blueprint for creating objects with specific properties and behaviors (methods). It defines what an object should look like and what it can do.
+
+// Think of it like this:
+// If you were building cars in a factory:
+// A class is the template for building a car (defines shape, color, engine, etc.).
+// An object is the actual car built using that template.
+// Why Use
+// Reusability, structure, clean code, and support for OOP
+
