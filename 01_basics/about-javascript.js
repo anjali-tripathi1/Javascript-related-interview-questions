@@ -678,7 +678,14 @@ console.log(clone); // { name: "Alice", age: 25 }
 // intersection	 Combine multiple types into one	 type A = {x: number} & {y: number}
 // enum          Defines a set of named constants  enum Color { Red, Green, Blue }
 
+// tupels 
+// A tuple in TypeScript is a typed array with a fixed number of elements, where each element can have a different type.
 
+// union
+// A union type in TypeScript allows a variable to hold more than one type. It's defined using the | (pipe) symbol.
+// let value: string | number;
+// value = "hello";
+// value = 42;   
 
 // What is the difference between any, unknown, and never?
 // any	       accept any type(disables type checking0 (avoid using often)
@@ -763,3 +770,8 @@ console.log(clone); // { name: "Alice", age: 25 }
 // Why Use
 // Reusability, structure, clean code, and support for OOP
 
+// constructer
+// a constructor is a special method used in a class that gets called automatically when a new instance of the class is created. It's mainly used to initialize class properties and perform any setup the object needs before it is used.
+// You use constructors to assign initial values to the properties of a class.
+// You can hide logic inside the constructor to simplify object creation for the user of the class.
+// Constructors allow you to pass in dependencies or configuration data when creating an instance.
