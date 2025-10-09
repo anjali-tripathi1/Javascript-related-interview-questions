@@ -687,8 +687,18 @@ console.log(clone); // { name: "Alice", age: 25 }
 // value = "hello";
 // value = 42;   
 
+// An intersection type is a type that combines multiple types into one. An object of an intersection type must satisfy all the types involved.
+// type A = { name: string };
+// type B = { age: number };
+// type C = A & B; // Intersection type
+
+// const person: C = {
+//   name: "Alice",
+//   age: 30
+// };
+
 // What is the difference between any, unknown, and never?
-// any	       accept any type(disables type checking0 (avoid using often)
+// any	       accept any type(disables type checking (avoid using often)
 // unknown	   Safer alternative to any, must check type
 // never	     For values that never occur (e.g., errors)
 
