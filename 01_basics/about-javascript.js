@@ -785,3 +785,8 @@ console.log(clone); // { name: "Alice", age: 25 }
 // You use constructors to assign initial values to the properties of a class.
 // You can hide logic inside the constructor to simplify object creation for the user of the class.
 // Constructors allow you to pass in dependencies or configuration data when creating an instance.
+
+//  public, private, protected
+// public, private and protected are the access modifiers used to control the visibility and accessbility of class members. these modifiers used in oops to enforces encapsulation which helps protect internal logic from misuse or external interference.
+
+// supercall -- it is used to extract a parent class into sub class.Allows a subclass to call the constructor or methods of its parent class.
