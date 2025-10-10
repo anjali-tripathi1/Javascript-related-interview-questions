@@ -697,6 +697,21 @@ console.log(clone); // { name: "Alice", age: 25 }
 //   age: 30
 // };
 
+// it is not strictly necessary to use type when working with intersection types in TypeScript, but it's highly recommended for:
+// Clarity
+// Reusability
+// Maintainability
+
+// You can use intersection types directly in variable declarations without creating a separate type. But using type (or interface) makes the code more readable and reusable.
+
+// without using type 
+// let person: { name: string } & { age: number } = {
+//   name: "Anjali",
+//   age: 25
+// };
+
+// console.log(person);
+
 // What is the difference between any, unknown, and never?
 // any	       accept any type(disables type checking (avoid using often)
 // unknown	   Safer alternative to any, must check type
@@ -758,7 +773,7 @@ console.log(clone); // { name: "Alice", age: 25 }
 // using constructor (private, public)
 
 // Encapsulation -- bundals the data and methods into single unit(class).
-// 1. prevents the unauthorized user to enter in the internal data.
+// 1. prevents the unauthorized user to access the internal data.
 // 2. enforces controlled interactions through getters and setters.
 // 3. promots the data intregity and security.
 
@@ -817,8 +832,17 @@ console.log(clone); // { name: "Alice", age: 25 }
 //   isStudent: true
 // };
 
+// let sym1 = Symbol('course');
+// let sym2 = Symbol('price');
+// let details:Record<symbol, any> = {
+//      [sym1] : 'Angular',
+//      [sym2] : 5999 
+// }
+
+// console.log(details);
 
 // enum
+// it's stand for enumeration
 // an enum (short for enumeration) is a way to define a set of named constants. You use it when you want to represent a collection of related values that can be numbers or strings.
 // enum comes in two main types:
 // 1. Numeric Enums
