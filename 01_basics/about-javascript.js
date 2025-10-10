@@ -890,3 +890,21 @@ console.log(clone); // { name: "Alice", age: 25 }
 // Reverse Mapping           	Yes	                        No
 // Value Type               	number	                  string
 // Use Case	Internal       logic, math	            API responses, labels
+
+
+// polymorphism --> Polymorphism means "many forms" — the same function or method can operate on different types of objects.
+// Polymorphism allows objects of different classes to be treated as objects of a common superclass. The same method name can be used for different types.
+// use of polymorphism
+// Code reusability, flexibility, scalability, easy maintenance, dynamic method binding, loose coupling, better testing, support for design patterns, simplified interfaces, efficient framework integration. 
+
+// overriding
+// overloading
+// getters - read 
+// setters - modified
+// interface 
+// examples
+// diffrence between interface and class
+// implements
+// processer 
+// abstraction
+// calling abstracton with function
