@@ -789,4 +789,80 @@ console.log(clone); // { name: "Alice", age: 25 }
 //  public, private, protected
 // public, private and protected are the access modifiers used to control the visibility and accessbility of class members. these modifiers used in oops to enforces encapsulation which helps protect internal logic from misuse or external interference.
 
-// supercall -- it is used to extract a parent class into sub class.Allows a subclass to call the constructor or methods of its parent class.
+// supercall -- it is used to extract a parent class into sub class.it Allows a subclass to call the constructor or methods of its parent class.
+
+// Record 
+// Record is a utility type used to create an object type with specific keys and value types.
+// Record<Keys, ValueType>
+// Keys: The type of the keys (e.g., string, number, union like 'name' | 'age')
+// ValueType: The type of the values for all those keys
+// what does it do
+// Record builds a type where:
+// All keys must be of the specified type (string in your example)
+// All values must be of the specified value type (any in your example)
+
+// let personDetails: Record<string, any> = {
+//   name: "John",
+//   age: 25,
+//   isStudent: true
+// };
+// All keys are strings: "name", "age", "isStudent"
+
+// All values can be anything (any)
+
+// can be write like this.
+// let personDetails: { [key: string]: any } = {
+//   name: "John",
+//   age: 25,
+//   isStudent: true
+// };
+
+
+// enum
+// an enum (short for enumeration) is a way to define a set of named constants. You use it when you want to represent a collection of related values that can be numbers or strings.
+// enum comes in two main types:
+// 1. Numeric Enums
+// These are the default in TypeScript.
+// Values are numbers.
+// If you don't assign a value, it auto-increments starting from 0.
+// enum Direction {
+//   Up,      // 0
+//   Down,    // 1
+//   Left,    // 2
+//   Right    // 3
+// }
+// You can also assign custom numeric values:
+// enum Direction {
+//   Up = 1,
+//   Down,     // 2
+//   Left = 5,
+//   Right     // 6
+// }
+
+// Reverse Mapping (only works for numeric enums):
+// console.log(Direction.Up);      // 1
+// console.log(Direction[1]);      // "Down"
+
+// 2. String Enums
+// Each member must be explicitly initialized with a string value.
+// No auto-increment.
+// Safer and more readable, especially for APIs or logs.
+
+
+// enum Status {
+//   Success = "SUCCESS",
+//   Failure = "FAILURE",
+//   Pending = "PENDING"
+// }
+// let currentStatus: Status = Status.Success;
+// console.log(currentStatus); // "SUCCESS"
+
+// No reverse mapping:
+// console.log(Status["SUCCESS"]); // undefined
+
+// Feature	            Numeric Enum	              String Enum
+// Default Value        	Starts at 0	              Must assign manually
+// Auto-increment           	Yes                        	No
+// Reverse Mapping           	Yes	                        No
+// Value Type               	number	                  string
+// Use Case	Internal       logic, math	            API responses, labels
