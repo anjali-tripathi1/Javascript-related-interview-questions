@@ -919,3 +919,58 @@ console.log(clone); // { name: "Alice", age: 25 }
 
 
 // an interface is a powerful way to define the shape of an object. It allows you to specify the structure, including the properties and method signatures, that an object must have — without providing actual implementation.
+// Purpose of Interfaces
+// Interfaces are used to:
+//  Define object shapes
+//  Support code reusability
+//  Ensure type safety
+//  Improve readability and maintainability
+//  Help with object-oriented programming (e.g., implements in classes)
+
+
+// implements
+// **implements** keyword is used by a class to indicate that it is agreeing to follow a structure defined by an interface.
+// This means the class must provide implementations for all the properties and methods declared in the interface.
+// "implements means the class promises to follow the rules set by the interface."
+
+// Why use implements?
+// To make sure a class has all the properties and methods declared in the interface.
+// To enforce consistency across different classes.
+// To catch errors early when a class is missing something it should have.
+// To support object-oriented programming (OOP)
+// It aligns with OOP principles like abstracti on and polymorphism.
+// provides the Type safety, structure, consistency
+// For type safety
+// TypeScript will throw an error if the class misses any part of the interface — preventing bugs early.
+
+
+// Why don't we use extends instead of implements in interfaces?
+// Actually:
+//  We do use extends with interfaces.
+// But the key is:
+// implements is used by classes to follow an interface.
+// extends is used by interfaces to inherit from other interfaces.
+
+
+// Summary Table:
+// Keyword	            Used With	                     Meaning
+// implements          Class → Interface         Class agrees to implement all properties/
+//                                                     methods of the interface
+
+// extends                Interface → Interface     Interface inherits properties/methods from 
+//                                                        another interface
+
+// extends                   Class → Class             Class inherits from another class 
+//                                                         (including logic)
+
+
+// Why Not Use implements Between Interfaces?
+// Because:
+// implements is meant for classes to promise that they follow an interface.
+// Interfaces themselves don’t implement anything — they only describe structure.
+// When you want one interface to build on another, you use **extends**.
+
+// Use **implements** when a class wants to follow an interface.
+// Use **extends** when one interface wants to build on another interface.
+
+
