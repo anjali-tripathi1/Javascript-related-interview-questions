@@ -894,8 +894,16 @@ console.log(clone); // { name: "Alice", age: 25 }
 
 // polymorphism --> Polymorphism means "many forms" — the same function or method can operate on different types of objects.
 // Polymorphism allows objects of different classes to be treated as objects of a common superclass. The same method name can be used for different types.
+// new
+// it means multiple implementation that allows objects of different types to be treated as instances of the same type through a shared interface or base class.
 // use of polymorphism
 // Code reusability, flexibility, scalability, easy maintenance, dynamic method binding, loose coupling, better testing, support for design patterns, simplified interfaces, efficient framework integration. 
+
+
+// getter --> to read and get the private data safely.
+// setter --> to modify and update the private data safley.
+
+
 
 // overriding
 // overloading
@@ -908,3 +916,6 @@ console.log(clone); // { name: "Alice", age: 25 }
 // processer 
 // abstraction
 // calling abstracton with function
+
+
+// an interface is a powerful way to define the shape of an object. It allows you to specify the structure, including the properties and method signatures, that an object must have — without providing actual implementation.
