@@ -702,6 +702,20 @@ console.log(clone); // { name: "Alice", age: 25 }
 // Reusability
 // Maintainability
 
+// the type keyword is the only keyword that directly supports using the & operator to create intersection types.
+// You must use type to declare intersection types explicitly.
+// There is no direct alternative keyword to replace type for this use.
+
+// You cannot use interface with & directly:
+
+//  Invalid
+// interface Person = A & B; // Error!
+
+// interface A { name: string }
+// interface B { age: number }
+
+// interface Person extends A, B {} //  Works for objects only
+
 // You can use intersection types directly in variable declarations without creating a separate type. But using type (or interface) makes the code more readable and reusable.
 
 // without using type 
