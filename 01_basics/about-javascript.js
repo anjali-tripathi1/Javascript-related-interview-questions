@@ -988,3 +988,62 @@ console.log(clone); // { name: "Alice", age: 25 }
 // Use **extends** when one interface wants to build on another interface.
 
 
+// abstraction
+// It refers to the process of hiding the complex implementation details and showing only the essential features of an object or system to the user.
+// Abstraction means showing only what is necessary and hiding the rest.
+
+// Just like when you drive a car:
+// You only need to know how to use the steering wheel, accelerator, and brakes.
+// You don’t need to know how the engine works internally.
+
+// Purpose of Abstraction:
+// To simplify complex systems.
+// To reduce code complexity.
+// To protect implementation details from the user.
+// To enhance security by exposing only necessary parts.
+
+// Benefits of Abstraction:
+// Cleaner and more readable code
+// Easier maintenance and modification
+// Enhanced security by hiding sensitive logic
+// Promotes code reusability and scalability
+
+// overloading
+// where multiple methods in the same class have the same name but different parameters (type, number, or order).
+// this is called compiletime polymorphism.
+
+// overriding 
+// where a subclass (child class) provides a new implementation of a method that is already defined in its superclass (parent class).
+// Key Features of Overriding:
+// Method name must be same.
+// Parameters must be same (method signature must match).
+// Return type must be the same or compatible (e.g., in Java, covariant return types).
+// There must be an inheritance relationship.
+// Happens at runtime → also called runtime polymorphism.
+
+
+// Feature                     Class	                                      Interface
+// Purpose	         Defines how things work (with implementation)	  Defines what things 
+                                                                    // should look like        (structure only).   
+
+
+// Contains            // Properties, constructors,         Only property/method 
+                      // methods with actual code.                      signatures, no 
+                                                                      //  implementation.
+
+
+// Instantiation            You can create objects             Cannot create objects directly
+//                          (instances) from classes.             from interfaces.
+
+
+// Code Output (JavaScript)      Gets compiled into JavaScript    Does not exist in compiled 
+                                                                //  JavaScript (used only at compile time)
+
+
+// Modifiers
+// Supports public, private, protected, readonly.
+// All properties are public by default. No access modifiers.
+
+// inheritence
+// single
+// multiple
