@@ -502,11 +502,18 @@ counter();  // 1
 counter();  // 2    
 counter();  // 3
 
+// Each time you call counter(),
+// It executes inner().
+// Inside inner(), the line count++ increases the same count variable that was defined in outer().
+// Then console.log(count) prints the updated value.
+
+
+
 
 //  function invocation
 // call, apply, bind
 
-// it is used for invoking a function
+// it is used for invoking a function It lets you explicitly set the value of this when calling a function, and you can also pass arguments individually.
 // func.call(thisArg, arg1, arg2, ...);
 
 
